@@ -1,17 +1,17 @@
 # Final project
 
 import pygame
-import math
 import mfun
 
 def main():
     # pygame setup
     pygame.init()
-    screen = pygame.display.set_mode((800, 500))
+    screen = pygame.display.set_mode((1200, 800))
     clock = pygame.time.Clock()
     running = True
     dt = 0
     pygame.display.set_caption("Vectors")
+    pygame.display.set_icon(screen)
     
     # Default parameters
     spacing = 70 # spacing between grid lines
@@ -23,13 +23,12 @@ def main():
     addition = False
     subtraction = False
     reset = False
-     
-    stdx = True
-    stdy = True
-
+    refgrid = True # Reference grids
+    ref_hold = False
+    
     # Basis of vector space
-    transformx = pygame.Vector2(7, 0)
-    transformy = pygame.Vector2(2, 3)
+    transformx = pygame.Vector2(1, 0)
+    transformy = pygame.Vector2(0, 1)
     
     # Main loop
     while running:
@@ -42,57 +41,9 @@ def main():
         # fill the screen with a color to wipe away anything from last frame
         screen.fill("black")
     
-        # Standard grids with scaling factors (Change numbers in range to correct spacing)
+        # Standard grids 
         keys = pygame.key.get_pressed()
-        grid_color = (135, 206, 235)
-        semigrid_color = (30, 30, 30)
-        if False:
-            
-            # Y axis semi grids
-            if stdy:
-                width_start = origin_pos[0]
-                y = spacing*abs(transformx[0]) / 2 # Used to show semi grid for better precision
-                for i in range (int((screen.get_width() - width_start) / spacing)*2 ): # draw no. of grid lines
-                    pygame.draw.line(screen, semigrid_color, (width_start + y, 0), (width_start + y, screen.get_height()))
-                    y += spacing*abs(transformx[0]) / 2
-                y = spacing*abs(transformx[0]) / 2
-                for i in range (int(width_start / spacing)*2 ): # draw no. of grid lines
-                    pygame.draw.line(screen, semigrid_color, (width_start - y, 0), (width_start - y, screen.get_height()))
-                    y += spacing*abs(transformx[0]) / 2
-            # X axis semi grids
-            if stdx:
-                height_start = origin_pos[1]
-                y = spacing*abs(transformy[1]) / 2
-                for i in range (int((screen.get_height() - height_start) / spacing)*2 ): # draw no. of grid lines
-                    pygame.draw.line(screen, semigrid_color, (0, height_start + y), (screen.get_width(), height_start + y))
-                    y += spacing*abs(transformy[1]) / 2
-                y = spacing*abs(transformy[1]) / 2
-                for i in range (int(height_start / spacing)*2 ): # draw no. of grid lines
-                    pygame.draw.line(screen, semigrid_color, (0, height_start - y), (screen.get_width(), height_start - y))
-                    y += spacing*abs(transformy[1]) / 2
-
-            # Y axis grids
-            if stdy:
-                width_start = origin_pos[0]
-                x = spacing*abs(transformx[0])
-                for i in range (int((screen.get_width() - width_start) / spacing) ): # draw no. of grid lines
-                    pygame.draw.line(screen, grid_color, (width_start + x, 0), (width_start + x, screen.get_height()))
-                    x += spacing*abs(transformx[0])
-                x = spacing*abs(transformx[0])
-                for i in range (int(width_start / spacing) ): # draw no. of grid lines
-                    pygame.draw.line(screen, grid_color, (width_start - x, 0), (width_start - x, screen.get_height()))
-                    x += spacing*abs(transformx[0])
-            # X axis grids
-            if stdx:
-                height_start = origin_pos[1]
-                x = spacing*abs(transformy[1])
-                for i in range (int((screen.get_height() - height_start) / spacing) ): # draw no. of grid lines
-                    pygame.draw.line(screen, grid_color, (0, height_start + x), (screen.get_width(), height_start + x))
-                    x += spacing*abs(transformy[1])
-                x = spacing*abs(transformy[1])
-                for i in range (int(height_start / spacing) ): # draw no. of grid lines
-                    pygame.draw.line(screen, grid_color, (0, height_start - x), (screen.get_width(), height_start - x))
-                    x += spacing*abs(transformy[1])
+        grid_color = (135, 206, 235)  
 
         # Grids turn off/on button
         if grid_hold: # if user is still holding the key then do nothing
@@ -104,13 +55,18 @@ def main():
         if grid_hold == False: # if user is pressing g freshly change state of grid
             if keys[pygame.K_g]:
                 grid = not grid
-                grid_hold = True
-              
-        # bool for transformed grids  
-        if transformx[1] != 0 or transformx == (0, 0):
-            stdx = False
-        if transformy[0] != 0 or transformy == (0, 0):
-            stdy = False
+                grid_hold = True   
+                
+        # Reference grid turn on off button (bad design)
+        if ref_hold: 
+            if keys[pygame.K_v]:
+                ref_hold = True
+            else: 
+                ref_hold = False
+        if ref_hold == False:
+            if keys[pygame.K_v]:
+                refgrid = not refgrid
+                ref_hold = True
             
         # Draw x and y axis of given basis
         constant = max(screen.get_height(), screen.get_width()) # Change this buggy magic number  
@@ -119,19 +75,22 @@ def main():
         converty = transformy*constant
         convertyn = transformy*constant*(-1)
         
+        # Reference grids and axis
+        if refgrid:
+            mfun.reference_grids(screen, origin_pos, (25, 25, 25), (100, 100, 100), spacing)
         # Basis dependent grids aka tranformed grids
         if grid:
-            mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color)
+            mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, 2)                
                     
         # For y we have
        
-        draw_vector(screen, origin_pos, converty, spacing, "white", 1)
-        draw_vector(screen, origin_pos, convertyn, spacing, "white", 1)
+        draw_vector(screen, origin_pos, converty, spacing, "white", 2)
+        draw_vector(screen, origin_pos, convertyn, spacing, "white", 2)
         
         # x axis we have
         
-        draw_vector(screen, origin_pos, convertx, spacing, "white", 1)
-        draw_vector(screen, origin_pos, convertxn, spacing, "white", 1)
+        draw_vector(screen, origin_pos, convertx, spacing, "white", 2)
+        draw_vector(screen, origin_pos, convertxn, spacing, "white", 2)
 
        
 
@@ -143,10 +102,7 @@ def main():
         vector1 = (1, 1)
         vector2 = (1, 3)
         mfun.draw_bvector(screen, origin_pos, vector1, transformx, transformy, spacing, (0, 255, 0)) 
-        draw_vector(screen, origin_pos, vector2, spacing, (0, 0, 255))
-        
-        '''mfun.parallel_line((0,0), vector2, vector1, screen, spacing, origin_pos, "blue", 3)
-        mfun.parallel_line((0,0), vector1, vector2, screen, spacing, origin_pos, "green", 3)'''
+        mfun.draw_bvector(screen, origin_pos, vector2, transformx, transformy, spacing, "purple")
         
         # vector addition and subtraction (future implement output vectors as transparent 50 % and transparent)
 
@@ -155,13 +111,14 @@ def main():
             
         if addition: 
             vector3 =  (vector1[0] + vector2[0], vector2[1] + vector1[1])
-            draw_vector(screen, origin_pos, vector3, spacing, (255, 0, 0))
+            mfun.draw_bvector(screen, origin_pos, vector3, transformx, transformy, spacing, "red")
             
         if keys[pygame.K_s]:
             subtraction = True
             
         if subtraction:
-            draw_vector(screen, origin_pos, (vector1[0] - vector2[0], vector1[1] - vector2[1]), spacing, (255, 0, 255))
+            vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
+            mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, "yellow")
          
 
         # TEST AREA ! (Make effects function of spacing, future implementation)
@@ -195,10 +152,9 @@ def main():
         # flip() the display to put your work on screen
         pygame.display.flip()
 
-        # limits FPS to 300
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
-        dt = clock.tick(300) / 1000
+        dt = clock.tick(120) / 1000
 
     pygame.quit()
 
