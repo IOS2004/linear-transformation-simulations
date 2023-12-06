@@ -1,0 +1,842 @@
+('C:\\Users\\om '
+ 'sahu\\OneDrive\\Desktop\\myRepos\\PythonApplication3\\build\\main\\PYZ-00.pyz',
+ [('pkg_resources',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\__init__.py',
+   'PYMODULE'),
+  ('packaging._structures',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('packaging.specifiers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('typing',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\typing.py',
+   'PYMODULE'),
+  ('contextlib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('packaging.version',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\version.py',
+   'PYMODULE'),
+  ('packaging._musllinux',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\_musllinux.py',
+   'PYMODULE'),
+  ('subprocess',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\subprocess.py',
+   'PYMODULE'),
+  ('dummy_threading',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\dummy_threading.py',
+   'PYMODULE'),
+  ('_dummy_thread',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_dummy_thread.py',
+   'PYMODULE'),
+  ('selectors',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\selectors.py',
+   'PYMODULE'),
+  ('threading',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_threading_local.py',
+   'PYMODULE'),
+  ('signal',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\signal.py',
+   'PYMODULE'),
+  ('struct',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\struct.py',
+   'PYMODULE'),
+  ('packaging.tags',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\tags.py',
+   'PYMODULE'),
+  ('logging',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('string',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\string.py',
+   'PYMODULE'),
+  ('packaging._manylinux',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\_manylinux.py',
+   'PYMODULE'),
+  ('ctypes',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('packaging.__about__',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('packaging.requirements',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pyparsing',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\__init__.py',
+   'PYMODULE'),
+  ('pyparsing.common',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\common.py',
+   'PYMODULE'),
+  ('datetime',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\datetime.py',
+   'PYMODULE'),
+  ('_strptime',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_strptime.py',
+   'PYMODULE'),
+  ('calendar',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\calendar.py',
+   'PYMODULE'),
+  ('argparse',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\argparse.py',
+   'PYMODULE'),
+  ('gettext',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\gettext.py',
+   'PYMODULE'),
+  ('copy',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\copy.py',
+   'PYMODULE'),
+  ('pyparsing.testing',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\testing.py',
+   'PYMODULE'),
+  ('pyparsing.unicode',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\unicode.py',
+   'PYMODULE'),
+  ('pyparsing.helpers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\helpers.py',
+   'PYMODULE'),
+  ('html.entities',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\html\\entities.py',
+   'PYMODULE'),
+  ('html',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\html\\__init__.py',
+   'PYMODULE'),
+  ('pyparsing.results',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\results.py',
+   'PYMODULE'),
+  ('pprint',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pprint.py',
+   'PYMODULE'),
+  ('pyparsing.core',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\core.py',
+   'PYMODULE'),
+  ('pyparsing.diagram',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\diagram\\__init__.py',
+   'PYMODULE'),
+  ('inspect',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\inspect.py',
+   'PYMODULE'),
+  ('importlib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('token',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\token.py',
+   'PYMODULE'),
+  ('dis',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\opcode.py',
+   'PYMODULE'),
+  ('ast',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ast.py',
+   'PYMODULE'),
+  ('pdb',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pdb.py',
+   'PYMODULE'),
+  ('getopt',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\getopt.py',
+   'PYMODULE'),
+  ('pydoc',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pydoc.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\webbrowser.py',
+   'PYMODULE'),
+  ('socket',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\socket.py',
+   'PYMODULE'),
+  ('shutil',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\shutil.py',
+   'PYMODULE'),
+  ('tarfile',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\tarfile.py',
+   'PYMODULE'),
+  ('gzip',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\gzip.py',
+   'PYMODULE'),
+  ('_compression',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_compression.py',
+   'PYMODULE'),
+  ('lzma',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\bz2.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\fnmatch.py',
+   'PYMODULE'),
+  ('posixpath',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\posixpath.py',
+   'PYMODULE'),
+  ('genericpath',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\genericpath.py',
+   'PYMODULE'),
+  ('email.message',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('urllib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\generator.py',
+   'PYMODULE'),
+  ('random',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\random.py',
+   'PYMODULE'),
+  ('bisect',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\bisect.py',
+   'PYMODULE'),
+  ('hashlib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\hashlib.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('base64',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\base64.py',
+   'PYMODULE'),
+  ('email.charset',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.header',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.errors',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.utils',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('quopri',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\quopri.py',
+   'PYMODULE'),
+  ('uu',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\uu.py',
+   'PYMODULE'),
+  ('optparse',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\optparse.py',
+   'PYMODULE'),
+  ('http.server',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\http\\server.py',
+   'PYMODULE'),
+  ('http',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('socketserver',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\socketserver.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\mimetypes.py',
+   'PYMODULE'),
+  ('http.client',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\http\\client.py',
+   'PYMODULE'),
+  ('ssl',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ssl.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ipaddress.py',
+   'PYMODULE'),
+  ('pydoc_data.topics',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pydoc_data',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pydoc_data\\__init__.py',
+   'PYMODULE'),
+  ('tty',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\tty.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('shlex',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\shlex.py',
+   'PYMODULE'),
+  ('glob',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\glob.py',
+   'PYMODULE'),
+  ('code',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\code.py',
+   'PYMODULE'),
+  ('codeop',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\codeop.py',
+   'PYMODULE'),
+  ('bdb',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\bdb.py',
+   'PYMODULE'),
+  ('cmd',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\cmd.py',
+   'PYMODULE'),
+  ('pyparsing.actions',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\actions.py',
+   'PYMODULE'),
+  ('pyparsing.exceptions',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\exceptions.py',
+   'PYMODULE'),
+  ('pyparsing.util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pyparsing\\util.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('packaging.markers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\markers.py',
+   'PYMODULE'),
+  ('packaging',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('packaging.utils',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._compat',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.utils',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._structures',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.markers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.appdirs',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.version',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.pyparsing',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
+   'PYMODULE'),
+  ('uuid',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\uuid.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('distutils.util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\util.py',
+   'PYMODULE'),
+  ('distutils.filelist',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\filelist.py',
+   'PYMODULE'),
+  ('distutils.debug',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\debug.py',
+   'PYMODULE'),
+  ('distutils.file_util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\file_util.py',
+   'PYMODULE'),
+  ('distutils.dir_util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\dir_util.py',
+   'PYMODULE'),
+  ('py_compile',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\py_compile.py',
+   'PYMODULE'),
+  ('distutils.sysconfig',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\sysconfig.py',
+   'PYMODULE'),
+  ('distutils.text_file',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\text_file.py',
+   'PYMODULE'),
+  ('_osx_support',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_osx_support.py',
+   'PYMODULE'),
+  ('distutils.log',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\log.py',
+   'PYMODULE'),
+  ('distutils',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\__init__.py',
+   'PYMODULE'),
+  ('distutils.spawn',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\spawn.py',
+   'PYMODULE'),
+  ('distutils.dep_util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\dep_util.py',
+   'PYMODULE'),
+  ('distutils.errors',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\distutils\\errors.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\sysconfig.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('ntpath',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ntpath.py',
+   'PYMODULE'),
+  ('pkg_resources.extern',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pkg_resources\\extern\\__init__.py',
+   'PYMODULE'),
+  ('imp',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\imp.py',
+   'PYMODULE'),
+  ('textwrap',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\textwrap.py',
+   'PYMODULE'),
+  ('tempfile',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\tempfile.py',
+   'PYMODULE'),
+  ('email.parser',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('plistlib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\plistlib.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('getpass',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\getpass.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\nturl2path.py',
+   'PYMODULE'),
+  ('ftplib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\netrc.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('platform',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\platform.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pkgutil.py',
+   'PYMODULE'),
+  ('stat',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\stat.py',
+   'PYMODULE'),
+  ('zipfile',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\zipfile.py',
+   'PYMODULE'),
+  ('__future__',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\__future__.py',
+   'PYMODULE'),
+  ('pathlib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pathlib.py',
+   'PYMODULE'),
+  ('os',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\os.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('pickle',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\pickle.py',
+   'PYMODULE'),
+  ('doctest',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\doctest.py',
+   'PYMODULE'),
+  ('unittest',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('unittest.signals',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\signals.py',
+   'PYMODULE'),
+  ('unittest.main',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\main.py',
+   'PYMODULE'),
+  ('unittest.runner',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\runner.py',
+   'PYMODULE'),
+  ('unittest.loader',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\loader.py',
+   'PYMODULE'),
+  ('unittest.suite',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('unittest.case',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\case.py',
+   'PYMODULE'),
+  ('unittest.result',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\result.py',
+   'PYMODULE'),
+  ('unittest.util',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\unittest\\util.py',
+   'PYMODULE'),
+  ('difflib',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\difflib.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('stringprep',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('mfun',
+   'C:\\Users\\om '
+   'sahu\\OneDrive\\Desktop\\myRepos\\PythonApplication3\\mfun.py',
+   'PYMODULE'),
+  ('pygame',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\__init__.py',
+   'PYMODULE'),
+  ('pygame.colordict',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\colordict.py',
+   'PYMODULE'),
+  ('pygame.macosx',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\macosx.py',
+   'PYMODULE'),
+  ('pygame.pkgdata',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\pkgdata.py',
+   'PYMODULE'),
+  ('pygame.fastevent',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\fastevent.py',
+   'PYMODULE'),
+  ('pygame.sndarray',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\sndarray.py',
+   'PYMODULE'),
+  ('pygame.surfarray',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\surfarray.py',
+   'PYMODULE'),
+  ('pygame.sysfont',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\sysfont.py',
+   'PYMODULE'),
+  ('pygame.ftfont',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\ftfont.py',
+   'PYMODULE'),
+  ('pygame.threads',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\threads\\__init__.py',
+   'PYMODULE'),
+  ('queue',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\queue.py',
+   'PYMODULE'),
+  ('pygame.sprite',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\sprite.py',
+   'PYMODULE'),
+  ('pygame.cursors',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\cursors.py',
+   'PYMODULE'),
+  ('pygame.version',
+   'c:\\users\\om '
+   'sahu\\appdata\\local\\programs\\python\\python36-32\\lib\\site-packages\\pygame\\version.py',
+   'PYMODULE')])
