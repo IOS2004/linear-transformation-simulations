@@ -207,17 +207,22 @@ class button():
         self.rect.topleft = (x, y)
         self.clicked = False
             
-    def draw(self, screen):
+    def draw(self, screen, alpha = 255):
         action = False
         # Get mouse position
         pos = pygame.mouse.get_pos()
 
         # Check mouse hover and clicked
         if self.rect.collidepoint(pos):
+            # Highlight the button if hovered  
+            self.image.set_alpha(255)                   
+            # Do something when clicked
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
                 self.clicked = True
                 action = True
-                    
+        else:
+            self.image.set_alpha(alpha)
+                
         if pygame.mouse.get_pressed()[0] == 0:
             self.clicked = False
 

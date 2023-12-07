@@ -10,7 +10,7 @@ def main():
     
     main_width = 1200
     main_height = 800
-    screen_main = pygame.display.set_mode((main_width, main_height))
+    screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF)
     
     clock = pygame.time.Clock()
     running = True
@@ -19,7 +19,9 @@ def main():
 
     # Surface to draw main interactive graph on
     graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
-    screen = pygame.Surface(graphCoord)
+    screen = pygame.Surface(graphCoord, pygame.HWSURFACE)
+    # Surface for menu
+    menu = pygame.Surface((main_width/3, main_height))
     
     # Default parameters
     spacing = 70 # spacing between grid lines
@@ -37,25 +39,40 @@ def main():
     # Button state booleans
     start = False # Turns on the graph page
     frontPage = True # Front page of software
+    sideMenu = False # Displays side menu
     
     # Basis of vector space
     transformx = pygame.Vector2(1, 0)
     transformy = pygame.Vector2(0, 1)
     
     # Image surfaces
-    logo = pygame.image.load('Logo.png')
+    logo = pygame.image.load('images/Logo.png')
     pygame.display.set_icon(logo) # Icon of software
     
-    front = pygame.image.load('Front.jpg') # Front page of software
+    front = pygame.image.load('images/Front.jpg') # Front page of software
     front = pygame.transform.smoothscale(front, (main_width, main_height))
-    
-    start_img = pygame.image.load('start.png').convert_alpha()
-    
-    # Button instances
-    start_button = mfun.button( (main_width/2) - 150 , main_height/2, start_img, 0.24)
-    
 
+    start_img = pygame.image.load('images/start.png').convert_alpha()  
+    toggle_img = pygame.image.load('images/left.png').convert_alpha()
+    detoggle_img = pygame.image.load('images/right.png').convert_alpha()
+    home_img = pygame.image.load('images/home.png').convert_alpha()
     
+    
+    # Fonts Change hardcoded coordinates and sizes
+    font = pygame.font.Font(None, 100)
+    fontFront = font.render("Vector Vista", True, "White")
+    font = pygame.font.Font(None, 30)
+    Frontdisc = font.render("A powerful tool to intuitively learn linear algebra's components", True, "cyan")
+    font = pygame.font.Font(None, 25)
+    copyright = font.render("\u00A9OmSahu2023", True, "White")
+    
+    
+    # Button instances change hardcoded coordinates and sizes
+    start_button = mfun.button( (main_width/2) - 150 , main_height/2, start_img, 0.24)
+    toggle = mfun.button(main_width - 120, 50, toggle_img, 0.115)
+    detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
+    home = mfun.button(50, 40, home_img, 0.12)
+        
     # Main loop
     while running:
         # poll for events
@@ -180,29 +197,60 @@ def main():
                 spacing = 70
                 origin_pos = pygame.Vector2(screen.get_width() / 2 , screen.get_height() / 2 )
                 reset = False
+                
+            # toggle side screen
+         
+            if sideMenu == False:
+                if toggle.draw(screen, 230):
+                    graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
+                    screen = pygame.transform.smoothscale(screen, graphCoord)
+                    sideMenu = True
+                    reset = True
+                                    
+            # Toggle home screen
+            if home.draw(screen, 230):
+                frontPage = True
+                start = False
+                sideMenu = False
+            
+                
          
         # Implementing Front page
-        if start_button.draw(front):
-            screen_main.fill('black')
-            start = True
-            frontPage = False                
-
+        if frontPage:
+            if start_button.draw(front, 5):
+                screen_main.fill('black')
+                sideMenu = True
+                start = True
+                frontPage = False
+                reset = True
+        
 
         # Screen pages 
 
-        # Blits the front page
+        # Blits the front page Change hardcoded coordinates and sizes
         if frontPage:
             screen_main.blit(front, (0,0))
-            
-        
-
-
-
+            screen_main.blit(fontFront, (main_width/2 - 200, main_height/2 - 200))
+            screen_main.blit(Frontdisc, (main_width/2 - 300, main_height/2 - 100))
+            screen_main.blit(copyright, (main_width/1.5, main_height/1.2))
 
         # Blits the graph
-        if start:
+        if start:  
             screen_main.blit(screen, (0,0))
-        # Blits the side section 
+            
+        # Blits the side section
+        if sideMenu:
+            screen_main.blit(menu, (screen.get_width(),0))
+            
+        # Implementing Side menu
+        if sideMenu:   
+            menu.fill((0,0,20))
+            if detoggle.draw(screen_main, 230):
+                graphCoord = (screen_main.get_width(), screen_main.get_height())
+                screen = pygame.transform.smoothscale(screen, graphCoord)
+                sideMenu = False
+                reset = True
+
             
         # flip() the display to put your work on screen
         pygame.display.flip()
