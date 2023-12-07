@@ -2,47 +2,49 @@ import math
 import pygame
 
 def distance_points(p1, p2):
+    """ Gives distance between two points"""
     distance = math.sqrt( (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2 )
     return distance
 
 def convert(vector, spacing, origin):
-    # convert point back to original coordinate system
+    """convert point back to original coordinate system"""
     vector = (vector[0]*spacing + origin[0], (origin[1] - vector[1]*spacing))
     return vector
 
 def convert_reverse(vector, spacing, origin):
-    # convert coordinate point to our coordinate system
+    """convert coordinate point to our coordinate system"""
     vector = ((vector[0] - origin[0]) / spacing, (origin[1] - vector[1]) / spacing)
     return vector
 
 def find(x1, y1, slope, magnitude):
-    # Finds the end point helper function for parallel line
+    """Finds the end point helper function for parallel line"""
     x = x1 + magnitude * (1 / math.sqrt(1 + slope**2))
     y = y1 + slope * magnitude * (1 / math.sqrt(1 + slope**2))
     end = (x, y)
     return end
 
 def findn(x1, y1, slope, magnitude):
-    # Finds the end point helper function for parallel line (Produce alternate end point as equation has two solutions)
+    """Finds the end point helper function for parallel line (Produce alternate end point as equation has two solutions)"""
     x = x1 - magnitude * (1 / math.sqrt(1 + slope**2))
     y = y1 - slope * magnitude * (1 / math.sqrt(1 + slope**2))
     end = (x, y)
     return end
 
-def angle_lines(m1, m2): # Angle between two lines of slope m1 & m2 in radians
+def angle_lines(m1, m2): 
+    """Angle between two lines of slope m1 & m2 in radians"""
     if (m1*m2 == -1):
         return math.radians(90)
     angle = math.atan(abs( (m1 - m2) / (1 + m1*m2) ))
     return angle
     
 def draw_line(screen, origin, start, end, spacing, color, width = 3):
-    # Draw any line with converted coordinate system points
+    """Draw any line with converted coordinate system points"""
     start = convert(start, spacing, origin)
     end = convert(end, spacing, origin)
     pygame.draw.line(screen, color, start, end, width)
 
 def parallel_line(p1, p2, start_point, screen, spacing, origin, color, width = 1, grid = False):
-    # Draws parallel line to given line with color specified and start point specified of same magnitude and same direction
+    """Draws parallel line to given line with color specified and start point specified of same magnitude and same direction"""
 
     # Calculate magnitude of line
     mag = math.sqrt( (p2[0] - p1[0])*(p2[0] - p1[0]) + (p2[1] - p1[1])*(p2[1] - p1[1]) ) 
@@ -74,6 +76,7 @@ def parallel_line(p1, p2, start_point, screen, spacing, origin, color, width = 1
         draw_line(screen, origin, start_point, endn, spacing, color, width)
     
 def vector_grids(screen, origin, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, width = 1):
+   """Draws Basis dependent grids"""
    # Magnitude of basis vectors
    magx = math.sqrt(transformx[0]*transformx[0] + transformx[1]*transformx[1])
    magy = math.sqrt(transformy[0]*transformy[0] + transformy[1]*transformy[1])
@@ -145,12 +148,13 @@ def vector_grids(screen, origin, convertx, convertxn, converty, convertyn, trans
            x += magx
        
 def draw_bvector(screen, origin, vector, transformx, transformy, spacing, color, width = 3):
-    # Convert vector to new coordinate system according to given vector by matrix transformation
+    """Convert vector to new coordinate system according to given vector by matrix transformation"""
     vector = ((vector[0]*transformx[0] + vector[1]*transformy[0]), (vector[0]*transformx[1] + vector[1]*transformy[1]))
     draw_line(screen, origin, (0,0), vector, spacing, color, width)
     # Draw arrowhead
 
 def reference_grids(screen, origin_pos, semigrid_color, grid_color, spacing):
+    """ Draws Reference grids"""
     # Y axis semi grids
     width_start = origin_pos[0]
     y = spacing / 2 # Used to show semi grid for better precision
@@ -194,7 +198,6 @@ def reference_grids(screen, origin_pos, semigrid_color, grid_color, spacing):
         pygame.draw.line(screen, grid_color, (0, height_start - x), (screen.get_width(), height_start - x))
         x += spacing
     
-# Button class
 class button():
     def __init__(self, x, y, image, scale):
         height = image.get_height()
