@@ -1,6 +1,10 @@
 import math
 import pygame
 
+def distance_points(p1, p2):
+    distance = math.sqrt( (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2 )
+    return distance
+
 def convert(vector, spacing, origin):
     # convert point back to original coordinate system
     vector = (vector[0]*spacing + origin[0], (origin[1] - vector[1]*spacing))
@@ -74,30 +78,38 @@ def vector_grids(screen, origin, convertx, convertxn, converty, convertyn, trans
    magx = math.sqrt(transformx[0]*transformx[0] + transformx[1]*transformx[1])
    magy = math.sqrt(transformy[0]*transformy[0] + transformy[1]*transformy[1])
    
+   # Ranges Considering memory consumption
+   mgConvy = distance_points(converty, (0,0))
+   mgConvx = distance_points(convertx, (0,0)) 
+   rangex = mgConvy / (magy*10)
+   rangey = mgConvx / (magx*10)
+   rangex = int(rangex*math.exp(-spacing/100))
+   rangey = int(rangey*math.exp(-spacing/100))
+
    # grids future implemtation change range
    x = magy
    if converty[0] != 0:
        my = converty[1]/ converty[0]
-       for i in range(100):
+       for i in range(rangex):
             startx = ( (x/math.sqrt(1 + my*my)), (my*x/math.sqrt(1 + my*my)) )
             parallel_line((0, 0), convertx, startx, screen, spacing, origin, grid_color, width, True)
             parallel_line((0, 0), convertxn, startx, screen, spacing, origin, grid_color, width, True)
             x += magy
        x = magy
-       for i in range(100):
+       for i in range(rangex):
             startxn = ( ((-1)*x/math.sqrt(1 + my*my)), ((-1)*my*x/math.sqrt(1 + my*my)) )
             parallel_line((0, 0), convertx, startxn, screen, spacing, origin, grid_color, width, True)
             parallel_line((0, 0), convertxn, startxn, screen, spacing, origin, grid_color, width, True)
             x += magy
    else:
        x = magy 
-       for i in range(100):
+       for i in range(rangex):
             startx = ( 0, x )
             parallel_line((0, 0), convertx, startx, screen, spacing, origin, grid_color, width, True)
             parallel_line((0, 0), convertxn, startx, screen, spacing, origin, grid_color, width, True)
             x += magy
        x = magy
-       for i in range(100):
+       for i in range(rangex):
             startxn = ( 0, (-1)*x )
             parallel_line((0, 0), convertx, startxn, screen, spacing, origin, grid_color, width, True)
             parallel_line((0, 0), convertxn, startxn, screen, spacing, origin, grid_color, width, True)
@@ -107,26 +119,26 @@ def vector_grids(screen, origin, convertx, convertxn, converty, convertyn, trans
    x = magx
    if convertx[0] != 0:
        mx = convertx[1] / convertx[0]
-       for i in range(100):
+       for i in range(rangey):
            starty = ( (x/math.sqrt(1 + mx*mx)), (mx*x/math.sqrt(1 + mx*mx)) )
            parallel_line((0, 0), converty, starty, screen, spacing, origin, grid_color, width, True)
            parallel_line((0, 0), convertyn, starty, screen, spacing, origin, grid_color, width)
            x += magx
        x = magx
-       for i in range(100):         
+       for i in range(rangey):         
            startyn = ( ((-1)*x/math.sqrt(1 + mx*mx)), ((-1)*mx*x/math.sqrt(1 + mx*mx)) )
            parallel_line((0, 0), converty, startyn, screen, spacing, origin, grid_color, width, True)
            parallel_line((0, 0), convertyn, startyn, screen, spacing, origin, grid_color, width, True)
            x += magx
    else:
        x = magx
-       for i in range(100):
+       for i in range(rangey):
            starty = ( 0, x )
            parallel_line((0, 0), converty, starty, screen, spacing, origin, grid_color, width, True)
            parallel_line((0, 0), convertyn, starty, screen, spacing, origin, grid_color, width, True)
            x += magx
        x = magx
-       for i in range(100):         
+       for i in range(rangey):         
            startyn = ( 0, (-1)*x )
            parallel_line((0, 0), converty, startyn, screen, spacing, origin, grid_color, width, True)
            parallel_line((0, 0), convertyn, startyn, screen, spacing, origin, grid_color, width, True)
@@ -182,5 +194,31 @@ def reference_grids(screen, origin_pos, semigrid_color, grid_color, spacing):
         pygame.draw.line(screen, grid_color, (0, height_start - x), (screen.get_width(), height_start - x))
         x += spacing
     
-    
+# Button class
+class button():
+    def __init__(self, x, y, image, scale):
+        height = image.get_height()
+        width = image.get_width()
+        self.image = pygame.transform.smoothscale(image, (int(width*scale), int(height*scale)) )
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x, y)
+        self.clicked = False
+            
+    def draw(self, screen):
+        action = False
+        # Get mouse position
+        pos = pygame.mouse.get_pos()
+
+        # Check mouse hover and clicked
+        if self.rect.collidepoint(pos):
+            if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
+                self.clicked = True
+                action = True
+                    
+        if pygame.mouse.get_pressed()[0] == 0:
+            self.clicked = False
+
+        # Draw button on the screen
+        screen.blit(self.image, (self.rect.x, self.rect.y))
+        return action    
    
