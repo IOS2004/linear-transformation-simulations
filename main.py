@@ -1,6 +1,7 @@
 # Final project
 
 import pygame
+import pygame_gui
 import mfun
 import math
 
@@ -16,6 +17,7 @@ def main():
     running = True
     dt = 0
     pygame.display.set_caption("Vectors")
+    MANAGER = pygame_gui.UIManager((main_width, main_height))
 
     # Surface to draw main interactive graph on
     graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
@@ -35,6 +37,14 @@ def main():
     reset = False
     refgrid = True # Reference grids
     ref_hold = False
+    
+    # page2
+    submit_vect1 = False
+    invalid = False
+    submit_vect2 = False
+    invalid2 = False
+    addition = False
+    subtraction = False
     
     # Button state booleans
     start = False # Turns on the graph page
@@ -57,6 +67,18 @@ def main():
     detoggle_img = pygame.image.load('images/right.png').convert_alpha()
     home_img = pygame.image.load('images/home.png').convert_alpha()
     
+    add_img = pygame.image.load('images/menu/add.png').convert_alpha()
+    dot_img = pygame.image.load('images/menu/dot.png').convert_alpha()
+    linear_img = pygame.image.load('images/menu/linear.png').convert_alpha()
+    eigen_img = pygame.image.load('images/menu/eigen.png').convert_alpha()
+    determinant_img = pygame.image.load('images/menu/determinant.png').convert_alpha()
+    matrix_img = pygame.image.load('images/menu/matrix.png').convert_alpha()
+    diagonal_img = pygame.image.load('images/menu/diagonal.png').convert_alpha()
+    back_img = pygame.image.load('images/menu/back.png').convert_alpha()
+    submit_img = pygame.image.load('images/menu/submit.png').convert_alpha()
+    page2add_img = pygame.image.load('images/menu/page2/add.png').convert_alpha()
+    page2sub_img = pygame.image.load('images/menu/page2/sub.png').convert_alpha()
+    reset_img = pygame.image.load('images/menu/reset.png').convert_alpha()
     
     # Fonts Change hardcoded coordinates and sizes
     font = pygame.font.Font(None, 100)
@@ -65,14 +87,66 @@ def main():
     Frontdisc = font.render("A powerful tool to intuitively learn linear algebra's components", True, "cyan")
     font = pygame.font.Font(None, 25)
     copyright = font.render("\u00A9OmSahu2023", True, "White")
+    pageFont = pygame.font.Font(None, 30)
+    vect2 = pageFont.render("Vector 2", True, "White")
+    vect1 = pageFont.render("Vector 1", True, "White")
+    pageFont = pygame.font.Font(None, 20)
+    invalid_input = pageFont.render("INVALID INPUT", True, "Red")  
+    page2Font = pygame.font.Font(None, 25)
     
-    
+    # input vector fonts
+    pageFont = pygame.font.Font(None, 40)
+    b1 = pageFont.render("(        ,        )", True, "white")
+
     # Button instances change hardcoded coordinates and sizes
     start_button = mfun.button( (main_width/2) - 150 , main_height/2, start_img, 0.24)
     toggle = mfun.button(main_width - 120, 50, toggle_img, 0.115)
     detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
     home = mfun.button(50, 40, home_img, 0.12)
-        
+    
+    add = mfun.button(main_width - 350, 100, add_img, 0.5)
+    dot = mfun.button(main_width - 350, 200, dot_img, 0.5)
+    linear = mfun.button(main_width - 350, 300, linear_img, 0.5)
+    eigen = mfun.button(main_width - 350, 400, eigen_img, 0.5)
+    determinant = mfun.button(main_width - 350, 500, determinant_img, 0.5)
+    matrix = mfun.button(main_width - 350, 600, matrix_img, 0.5)
+    diagonal = mfun.button(main_width - 350, 700, diagonal_img, 0.5)
+    back = mfun.button(main_width - 400, 40, back_img, 0.08)
+    submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
+    submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
+    
+    # page2 buttons
+    add_p2 = mfun.button(main_width/1.4, main_height/1.7, page2add_img, 0.3)
+    sub_p2 = mfun.button(main_width/1.4, main_height/1.5, page2sub_img, 0.3)
+    reset_p2 = mfun.button(main_width/1.4, main_height/1.3, reset_img, 0.3 )
+
+    
+    # side menu pages
+    page1 = True
+    page2 = False
+    page3 = False
+    page4 = False
+    page5 = False
+    page6 = False
+    page7 = False
+    
+    # INPUT BOXES
+    vector1x_input_rect = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
+    vector1y_input_rect = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
+    vector2x_input_rect = pygame.Rect(main_width/1.37, main_height/2.4, 50, 33)
+    vector2y_input_rect = pygame.Rect(main_width/1.27, main_height/2.4, 50, 33)
+
+    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+    
+    # page2 Temp 
+    vector1 = (0,0)
+    vector2 = (0,0)
+    add_text = "Addition"
+    sub_text = "Subtraction"
+
     # Main loop
     while running:
         # poll for events
@@ -80,6 +154,13 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+                
+            MANAGER.process_events(event)
+
+        MANAGER.update(dt)
+        
+        
+        
 
         if start: # Implementing graph
             # fill the screen with a color to wipe away anything from last frame
@@ -133,45 +214,32 @@ def main():
                 mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, 2)                
                     
             # For y we have
-       
             draw_vector(screen, origin_pos, converty, spacing, "white", 2)
             draw_vector(screen, origin_pos, convertyn, spacing, "white", 2)
         
-            # x axis we have
-        
+            # x axis we have     
             draw_vector(screen, origin_pos, convertx, spacing, "white", 2)
             draw_vector(screen, origin_pos, convertxn, spacing, "white", 2)
 
-       
 
-            # Implement vector logic
+            # PAGES OPERATIONS IMPLEMENTATION
 
-            # Take user input (Future implementation)
+            # Page 2 OPERATIONS
+            if page2:
+                if invalid == False:
+                    mfun.draw_bvector(screen, origin_pos, vector1, transformx, transformy, spacing, (0, 255, 0)) 
+                if invalid2 == False:
+                    mfun.draw_bvector(screen, origin_pos, vector2, transformx, transformy, spacing, (0, 0, 255)) 
+                if addition and not invalid and not invalid2:
+                    vector3 = (vector1[0] + vector2[0], vector1[1] + vector2[1])
+                    add_text = str(vector3)
+                    mfun.draw_bvector(screen, origin_pos, vector3, transformx, transformy, spacing, (255, 0, 255)) 
+                if subtraction and not invalid and not invalid2:
+                    vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
+                    sub_text = str(vector4)
+                    mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, (255, 0, 0)) 
 
-            # draw vectors
-            vector1 = (1, 1)
-            vector2 = (1, 3)
-            mfun.draw_bvector(screen, origin_pos, vector1, transformx, transformy, spacing, (0, 255, 0)) 
-            mfun.draw_bvector(screen, origin_pos, vector2, transformx, transformy, spacing, "purple")
-        
-            # vector addition and subtraction (future implement output vectors as transparent 50 % and transparent)
-
-            if keys[pygame.K_a]:
-                addition = True
-            
-            if addition: 
-                vector3 =  (vector1[0] + vector2[0], vector2[1] + vector1[1])
-                mfun.draw_bvector(screen, origin_pos, vector3, transformx, transformy, spacing, "red")
-            
-            if keys[pygame.K_s]:
-                subtraction = True
-            
-            if subtraction:
-                vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
-                mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, "yellow")
-         
-
-            # TEST AREA ! (Make effects function of spacing, future implementation)
+            # (Make effects function of spacing, future implementation)
             # zoom effect
             if keys[pygame.K_z]:
                 spacing += (spacing/3)*dt
@@ -208,7 +276,7 @@ def main():
                     reset = True
                                     
             # Toggle home screen
-            if home.draw(screen, 230):
+            if home.draw(screen, 230):               
                 frontPage = True
                 start = False
                 sideMenu = False
@@ -243,15 +311,124 @@ def main():
             screen_main.blit(menu, (screen.get_width(),0))
             
         # Implementing Side menu
-        if sideMenu:   
+        if sideMenu: 
             menu.fill((0,0,20))
             if detoggle.draw(screen_main, 230):
                 graphCoord = (screen_main.get_width(), screen_main.get_height())
                 screen = pygame.transform.smoothscale(screen, graphCoord)
                 sideMenu = False
                 reset = True
-
-            
+            if page1 == False:
+                if back.draw(screen_main, 230):
+                    page1 = True
+                    page2 = False
+                    page3 = False
+                    page4 = False
+                    page5 = False
+                    page6 = False
+                    page7 = False
+            if page1:                
+                if add.draw(screen_main, 170):
+                    page1 = False
+                    page2 = True
+                if dot.draw(screen_main, 170):
+                    page1 = False
+                    page3 = True
+                if linear.draw(screen_main, 170):
+                    page1 = False
+                    page4 = True
+                if eigen.draw(screen_main, 170):
+                    page1 = False
+                    page5 = True
+                if determinant.draw(screen_main, 170):
+                    page1 = False
+                    page6 = True
+                if matrix.draw(screen_main, 170):
+                    page1 = False
+                    page7 = True
+                if diagonal.draw(screen_main, 170):
+                    page1 = False
+                    page8 = True
+                    
+            if page2: # Vector addition and subtraction
+                # Take input Vector 1 and 2
+                screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
+                MANAGER.draw_ui(screen_main)
+                vector1x = vector1x_input.get_text()
+                vector1y = vector1y_input.get_text()
+                vector2x = vector2x_input.get_text()
+                vector2y = vector2y_input.get_text()
+                
+                screen_main.blit(b1, (main_width/1.4, main_height/4))
+                screen_main.blit(b1, (main_width/1.4, main_height/2.4))
+                if invalid:
+                    screen_main.blit(invalid_input, (main_width/1.398, main_height/3.2))
+                if submit.draw(screen_main, 200):
+                    submit_vect1 = True
+                if submit_vect1:    
+                    vector1 = mfun.float_convert((vector1x, vector1y))
+                    if vector1 == "invalid":
+                        submit_vect1 = False
+                        invalid = True 
+                        addition = False
+                        subtraction = False
+                    else: 
+                        invalid = False
+                        submit_vect1 = False
+                        
+                screen_main.blit(vect2, (main_width/1.4, main_height/2.7))
+                if invalid2:
+                    screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
+                if submit2.draw(screen_main, 200):
+                    submit_vect2 = True
+                if submit_vect2:
+                    vector2 = mfun.float_convert((vector2x, vector2y))
+                    if vector2 == "invalid":
+                        submit_vect2 = False
+                        invalid2 = True
+                        addition = False
+                        subtraction = False
+                    else:
+                        invalid2 = False
+                        submit_vect2 = False
+                if add_p2.draw(screen_main, 200):
+                    addition = True
+                    
+                if sub_p2.draw(screen_main, 200):
+                    subtraction = True
+                    
+                if reset_p2.draw(screen_main, 200):
+                    vector1x_input.kill()
+                    vector1y_input.kill()
+                    vector2x_input.kill()
+                    vector2y_input.kill()
+                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+                    vector1 = (0,0)
+                    vector2 = (0,0)
+                    addition = False
+                    subtraction = False
+                    add_text = "Addition"
+                    sub_text = "Subtraction"
+                
+                addp2 = page2Font.render(add_text, True, "White")
+                subp2 = page2Font.render(sub_text, True, "White")
+                screen_main.blit(addp2, (main_width/1.2, main_height/1.65) )
+                screen_main.blit(subp2, (main_width/1.2, main_height/1.45) )
+                                                  
+            if page3:
+                x=0
+            if page4:
+                x=0
+            if page5:
+                x=0
+            if page6:
+                x=0    
+            if page7:
+                x=0
+           
         # flip() the display to put your work on screen
         pygame.display.flip()
 
@@ -266,8 +443,7 @@ def draw_vector(screen, origin, vector, spacing, color, width = 3):
     # draw vector from origin in original basis 
     vector = (vector[0]*spacing + origin[0], (origin[1] - vector[1]*spacing))
     pygame.draw.line(screen, color, origin, vector, width)
-
-
+    
     
 
 main()
