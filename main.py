@@ -135,17 +135,22 @@ def main():
     vector1y_input_rect = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
     vector2x_input_rect = pygame.Rect(main_width/1.37, main_height/2.4, 50, 33)
     vector2y_input_rect = pygame.Rect(main_width/1.27, main_height/2.4, 50, 33)
-
     vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
     vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
     vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
     vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+
     
-    # page2 Temp 
+    # pages variable initializationTemp 
     vector1 = (0,0)
     vector2 = (0,0)
     add_text = "Addition"
     sub_text = "Subtraction"
+    vector13 = (1,0)
+    vector23 = (0,0) 
+    dot_product = "Dot Product"
+    page2_heading = "ADDITION AND SUBTRACTION"
+    page3_heading = "DOT PRODUCT"
 
     # Main loop
     while running:
@@ -168,7 +173,7 @@ def main():
     
             # Standard grids 
             keys = pygame.key.get_pressed()
-            grid_color = (135, 206, 235)  
+            grid_color = (65, 136, 165)  
 
             # Grids turn off/on button
             if grid_hold: # if user is still holding the key then do nothing
@@ -198,8 +203,8 @@ def main():
             w = screen.get_width()
             o1 = origin_pos[0]
             o2 = origin_pos[1]
-            constantx = math.sqrt( abs( h*h + w*w + 2*(o1*transformx[0] + o2*transformx[1]) - o1*o1 - o2*o2  ) / ( transformx[0]*transformx[0] + transformx[1]*transformx[1] ) ) 
-            constanty = math.sqrt( abs( h*h + w*w + 2*(o1*transformy[0] + o2*transformy[1]) - o1*o1 - o2*o2 ) / ( transformy[0]*transformy[0] + transformy[1]*transformy[1] ) )
+            constantx = math.sqrt( abs( h*h + w*w + 2*(o1*transformx[0] + o2*transformx[1]) - o1*o1 - o2*o2  ) / ( transformx[0]*transformx[0] + 1 + transformx[1]*transformx[1] ) ) 
+            constanty = math.sqrt( abs( h*h + w*w + 2*(o1*transformy[0] + o2*transformy[1]) - o1*o1 - o2*o2 ) / ( transformy[0]*transformy[0] + 1 + transformy[1]*transformy[1] ) )
         
             convertx = transformx*constantx
             convertxn = transformx*constantx*(-1)
@@ -238,6 +243,20 @@ def main():
                     vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
                     sub_text = str(vector4)
                     mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, (255, 0, 0)) 
+                    
+            # Page 3 OPERATIONS
+            if page3:
+                # Transform grid
+                if invalid == False:
+                    transformx = pygame.Vector2(vector13[0], vector13[1])
+                    transformy = pygame.Vector2(0, 0)
+                # Draw transformed vector 
+                if invalid2 == False:
+                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, (255, 0, 0)) 
+                if not invalid2 and not invalid:
+                    dot_product = "Dot product = " + str(vector13[0]*vector23[0] + vector13[1]*vector23[1])
+                
+                
 
             # (Make effects function of spacing, future implementation)
             # zoom effect
@@ -318,6 +337,7 @@ def main():
                 screen = pygame.transform.smoothscale(screen, graphCoord)
                 sideMenu = False
                 reset = True
+                
             if page1 == False:
                 if back.draw(screen_main, 230):
                     page1 = True
@@ -327,7 +347,32 @@ def main():
                     page5 = False
                     page6 = False
                     page7 = False
-            if page1:                
+                    
+                    # reset p2, p3 variables to be recycled again
+                    invalid = False
+                    invalid2 = False
+                    submit_vect1 = False
+                    submit_vect2 = False
+                    vector1x_input.kill()
+                    vector1y_input.kill()
+                    vector2x_input.kill()
+                    vector2y_input.kill()
+                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+                    vector1 = (0,0)
+                    vector2 = (0,0)
+                    addition = False
+                    subtraction = False
+                    add_text = "Addition"
+                    sub_text = "Subtraction"
+                    vector13 = (1, 0)
+                    vector23 = (0, 0)
+                    transformx = pygame.Vector2(1, 0)
+                    transformy = pygame.Vector2(0, 1)
+                                 
+            if page1: # Front page of menu 
                 if add.draw(screen_main, 170):
                     page1 = False
                     page2 = True
@@ -350,7 +395,7 @@ def main():
                     page1 = False
                     page8 = True
                     
-            if page2: # Vector addition and subtraction
+            if page2: # Vector addition and subtraction 
                 # Take input Vector 1 and 2
                 screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
                 MANAGER.draw_ui(screen_main)
@@ -398,6 +443,10 @@ def main():
                     subtraction = True
                     
                 if reset_p2.draw(screen_main, 200):
+                    invalid = False
+                    invalid2 = False
+                    submit_vect1 = False
+                    submit_vect2 = False
                     vector1x_input.kill()
                     vector1y_input.kill()
                     vector2x_input.kill()
@@ -412,14 +461,72 @@ def main():
                     subtraction = False
                     add_text = "Addition"
                     sub_text = "Subtraction"
-                
+                page2_head = page2Font.render(page2_heading, True, "White")
                 addp2 = page2Font.render(add_text, True, "White")
                 subp2 = page2Font.render(sub_text, True, "White")
                 screen_main.blit(addp2, (main_width/1.2, main_height/1.65) )
-                screen_main.blit(subp2, (main_width/1.2, main_height/1.45) )
-                                                  
-            if page3:
-                x=0
+                screen_main.blit(subp2, (main_width/1.2, main_height/1.45) )  
+                screen_main.blit(page2_head, (main_width/1.39, main_height/24) )  
+                                                                 
+            if page3: # Dot product of two vectors
+                # Input space of two vectors
+                screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
+                MANAGER.draw_ui(screen_main)
+                vector1x = vector1x_input.get_text()
+                vector1y = vector1y_input.get_text()
+                vector2x = vector2x_input.get_text()
+                vector2y = vector2y_input.get_text()
+                
+                screen_main.blit(b1, (main_width/1.4, main_height/4))
+                screen_main.blit(b1, (main_width/1.4, main_height/2.4))
+                if invalid:
+                    screen_main.blit(invalid_input, (main_width/1.398, main_height/3.2))
+                if submit.draw(screen_main, 200):
+                    submit_vect1 = True
+                if submit_vect1:    
+                    vector13 = mfun.float_convert((vector1x, vector1y))
+                    if vector13 == "invalid":
+                        submit_vect1 = False
+                        invalid = True 
+                    else: 
+                        invalid = False
+                        submit_vect1 = False
+                        
+                screen_main.blit(vect2, (main_width/1.4, main_height/2.7))
+                if invalid2:
+                    screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
+                if submit2.draw(screen_main, 200):
+                    submit_vect2 = True
+                if submit_vect2:
+                    vector23 = mfun.float_convert((vector2x, vector2y))
+                    if vector23 == "invalid":
+                        submit_vect2 = False
+                        invalid2 = True
+                    else:
+                        invalid2 = False
+                        submit_vect2 = False
+                        
+                dot_text = page2Font.render(dot_product, True, "white")
+                screen_main.blit(dot_text, (main_width/1.4, main_height/1.65))
+                page3_head = page2Font.render(page3_heading, True, "White") 
+                screen_main.blit(page3_head, (main_width/1.3, main_height/24) )  
+
+                if reset_p2.draw(screen_main, 200):
+                    vector13 = (1, 0)
+                    vector23 = (0, 0)
+                    invalid = False
+                    invalid2 = False
+                    submit_vect1 = False
+                    submit_vect2 = False
+                    vector1x_input.kill()
+                    vector1y_input.kill()
+                    vector2x_input.kill()
+                    vector2y_input.kill()
+                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+    
             if page4:
                 x=0
             if page5:
@@ -434,7 +541,7 @@ def main():
 
         # dt is delta time in seconds since last frame, used for framerate-
         # independent physics.
-        dt = clock.tick(120) / 1000
+        dt = clock.tick(30) / 1000
 
     pygame.quit()
 

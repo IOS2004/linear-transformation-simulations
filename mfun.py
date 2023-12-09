@@ -85,8 +85,8 @@ def vector_grids(screen, origin, convertx, convertxn, converty, convertyn, trans
    # Ranges Considering memory consumption
    mgConvy = distance_points(converty, (0,0))
    mgConvx = distance_points(convertx, (0,0)) 
-   rangex = mgConvy / (magy*2)
-   rangey = mgConvx / (magx*2)
+   rangex = mgConvy / (magy*2 + 1)
+   rangey = mgConvx / (magx*2 + 1)
    rangex = int(rangex*math.exp(-spacing/100))
    rangey = int(rangey*math.exp(-spacing/100))
 
@@ -238,39 +238,7 @@ def float_convert(text):
     except ValueError:
         return "invalid"
     return (numx, numy)
+            
 
-def vector_input(screen_main, main_width, main_height, MANAGER, submit, submit_vect1, invalid):
-    pageFont = pygame.font.Font(None, 30)
-    vect1 = pageFont.render("Vector 1", True, "White")
-    pageFont = pygame.font.Font(None, 20)
-    invalid_input = pageFont.render("INVALID INPUT", True, "Red")  
-    pageFont = pygame.font.Font(None, 40)
-    b1 = pageFont.render("(        ,        )", True, "white")
-    vector1x_input_rect = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
-    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x')
-    vector1y_input_rect = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
-    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
-
-
-
-
-    screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
-    MANAGER.draw_ui(screen_main)
-    vector1x = vector1x_input.get_text()
-    vector1y = vector1y_input.get_text()
-                
-    screen_main.blit(b1, (main_width/1.4, main_height/4))
-    if invalid:
-        screen_main.blit(invalid_input, (main_width/1.398, main_height/3.2))
-    if submit.draw(screen_main, 200):
-        submit_vect1 = True
-    if submit_vect1:    
-        vector1 = float_convert((vector1x, vector1y))
-        if vector1 == "invalid":
-            submit_vect1 = False
-            invalid = True
-        else: 
-            invalid = False
-            submit_vect1 = False
     
     
