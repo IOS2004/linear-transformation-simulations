@@ -17,7 +17,8 @@ def main():
     running = True
     dt = 0
     pygame.display.set_caption("Vectors")
-    MANAGER = pygame_gui.UIManager((main_width, main_height))
+    MANAGER = pygame_gui.UIManager((main_width, main_height)) # used for vector input boxes
+    MANAGER2 = pygame_gui.UIManager((main_width, main_height)) # used for matrix input boxes
 
     # Surface to draw main interactive graph on
     graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
@@ -37,15 +38,25 @@ def main():
     reset = False
     refgrid = True # Reference grids
     ref_hold = False
-    
-    # page2
+    resetp2 = False
+    resetp3 = False
+    resetp4 = False
+    resetp5 = False
+    resetp6 = False
+    resetp7 = False
+    resetp8 = False
+    # page
     submit_vect1 = False
     invalid = False
     submit_vect2 = False
     invalid2 = False
     addition = False
     subtraction = False
-    
+    submit_matA = False
+    invalid3 = False
+    dobool = False
+    dtbool = False
+
     # Button state booleans
     start = False # Turns on the graph page
     frontPage = True # Front page of software
@@ -80,6 +91,9 @@ def main():
     page2sub_img = pygame.image.load('images/menu/page2/sub.png').convert_alpha()
     reset_img = pygame.image.load('images/menu/reset.png').convert_alpha()
     
+    page4_do_img = pygame.image.load('images/menu/page4/draw_original.png').convert_alpha()
+    page4_dt_img = pygame.image.load('images/menu/page4/draw_transformed.png').convert_alpha()
+    
     # Fonts Change hardcoded coordinates and sizes
     font = pygame.font.Font(None, 100)
     fontFront = font.render("Vector Vista", True, "White")
@@ -93,6 +107,11 @@ def main():
     pageFont = pygame.font.Font(None, 20)
     invalid_input = pageFont.render("INVALID INPUT", True, "Red")  
     page2Font = pygame.font.Font(None, 25)
+    
+    page3Font = pygame.font.Font(None, 150)
+    matrix_bracket = page3Font.render("[     ]", True, "white")
+    page3Font = pygame.font.Font(None, 30)
+    matrixA_text = page3Font.render("Matrix A", True, "white")
     
     # input vector fonts
     pageFont = pygame.font.Font(None, 40)
@@ -114,11 +133,16 @@ def main():
     back = mfun.button(main_width - 400, 40, back_img, 0.08)
     submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
     submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
+    submit3 = mfun.button(main_width/1.1, main_height/3.5, submit_img, 0.3 )
     
     # page2 buttons
     add_p2 = mfun.button(main_width/1.4, main_height/1.7, page2add_img, 0.3)
     sub_p2 = mfun.button(main_width/1.4, main_height/1.5, page2sub_img, 0.3)
     reset_p2 = mfun.button(main_width/1.4, main_height/1.3, reset_img, 0.3 )
+    
+    # page4 buttons
+    do_p4 = mfun.button(main_width/1.4, main_height/1.8, page4_do_img, 0.4)
+    dt_p4 = mfun.button(main_width/1.2, main_height/1.8, page4_dt_img, 0.4)
 
     
     # side menu pages
@@ -129,8 +153,10 @@ def main():
     page5 = False
     page6 = False
     page7 = False
+    page8 = False
     
     # INPUT BOXES
+    # MANAGER
     vector1x_input_rect = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
     vector1y_input_rect = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
     vector2x_input_rect = pygame.Rect(main_width/1.37, main_height/2.4, 50, 33)
@@ -139,9 +165,22 @@ def main():
     vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
     vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
     vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
-
+    # MANAGER2
+    matrix1x = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
+    matrix1y = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
+    matrix2x = pygame.Rect(main_width/1.37, main_height/3, 50, 33)
+    matrix2y = pygame.Rect(main_width/1.27, main_height/3, 50, 33)
+    matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
+    matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
+    matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
+    matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
     
-    # pages variable initializationTemp 
+    vectorax_input_rect = pygame.Rect(main_width/1.37, main_height/2.2, 50, 33)
+    vectoray_input_rect = pygame.Rect(main_width/1.27, main_height/2.2, 50, 33)
+    vectorax_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectorax_input_rect, manager=MANAGER2, object_id='#vectorax')
+    vectoray_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectoray_input_rect, manager=MANAGER2, object_id='#vectoray')
+    
+    # pages variable initialization
     vector1 = (0,0)
     vector2 = (0,0)
     add_text = "Addition"
@@ -151,6 +190,11 @@ def main():
     dot_product = "Dot Product"
     page2_heading = "ADDITION AND SUBTRACTION"
     page3_heading = "DOT PRODUCT"
+    page4_heading = "LINEAR TRANSFORMATION"
+    matAbx = (1, 0)
+    matAby = (0, 1)
+    vector14 = (0,0)
+    vector24 = (0,0)
 
     # Main loop
     while running:
@@ -161,9 +205,10 @@ def main():
                 running = False
                 
             MANAGER.process_events(event)
+            MANAGER2.process_events(event)
 
         MANAGER.update(dt)
-        
+        MANAGER2.update(dt)
         
         
 
@@ -255,6 +300,18 @@ def main():
                     mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, (255, 0, 0)) 
                 if not invalid2 and not invalid:
                     dot_product = "Dot product = " + str(vector13[0]*vector23[0] + vector13[1]*vector23[1])
+                    
+            # Page 4 OPERATIONS
+            if page4:
+                # Transform grid
+                if invalid3 == False:
+                    transformx = pygame.Vector2(matAbx[0], matAbx[1])
+                    transformy = pygame.Vector2(matAby[0], matAby[1])
+                if invalid2 == False:
+                    if dobool:
+                        draw_vector(screen, origin_pos, vector14, spacing, "green")
+                    if dtbool:
+                        mfun.draw_bvector(screen, origin_pos, vector24, transformx, transformy, spacing, "red")
                 
                 
 
@@ -276,8 +333,7 @@ def main():
             if keys[pygame.K_DOWN]:
                 origin_pos[1] += 300*dt
           
-            # Reset button (Undo all of the effect)
-           
+            # Reset button (Undo all of the effect)          
             if keys[pygame.K_r]:
                 reset = True
             if reset:
@@ -285,8 +341,7 @@ def main():
                 origin_pos = pygame.Vector2(screen.get_width() / 2 , screen.get_height() / 2 )
                 reset = False
                 
-            # toggle side screen
-         
+            # toggle side screen        
             if sideMenu == False:
                 if toggle.draw(screen, 230):
                     graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
@@ -337,41 +392,7 @@ def main():
                 screen = pygame.transform.smoothscale(screen, graphCoord)
                 sideMenu = False
                 reset = True
-                
-            if page1 == False:
-                if back.draw(screen_main, 230):
-                    page1 = True
-                    page2 = False
-                    page3 = False
-                    page4 = False
-                    page5 = False
-                    page6 = False
-                    page7 = False
-                    
-                    # reset p2, p3 variables to be recycled again
-                    invalid = False
-                    invalid2 = False
-                    submit_vect1 = False
-                    submit_vect2 = False
-                    vector1x_input.kill()
-                    vector1y_input.kill()
-                    vector2x_input.kill()
-                    vector2y_input.kill()
-                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
-                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
-                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
-                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
-                    vector1 = (0,0)
-                    vector2 = (0,0)
-                    addition = False
-                    subtraction = False
-                    add_text = "Addition"
-                    sub_text = "Subtraction"
-                    vector13 = (1, 0)
-                    vector23 = (0, 0)
-                    transformx = pygame.Vector2(1, 0)
-                    transformy = pygame.Vector2(0, 1)
-                                 
+                                                 
             if page1: # Front page of menu 
                 if add.draw(screen_main, 170):
                     page1 = False
@@ -443,24 +464,8 @@ def main():
                     subtraction = True
                     
                 if reset_p2.draw(screen_main, 200):
-                    invalid = False
-                    invalid2 = False
-                    submit_vect1 = False
-                    submit_vect2 = False
-                    vector1x_input.kill()
-                    vector1y_input.kill()
-                    vector2x_input.kill()
-                    vector2y_input.kill()
-                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
-                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
-                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
-                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
-                    vector1 = (0,0)
-                    vector2 = (0,0)
-                    addition = False
-                    subtraction = False
-                    add_text = "Addition"
-                    sub_text = "Subtraction"
+                    resetp2 = True
+                    
                 page2_head = page2Font.render(page2_heading, True, "White")
                 addp2 = page2Font.render(add_text, True, "White")
                 subp2 = page2Font.render(sub_text, True, "White")
@@ -512,30 +517,155 @@ def main():
                 screen_main.blit(page3_head, (main_width/1.3, main_height/24) )  
 
                 if reset_p2.draw(screen_main, 200):
-                    vector13 = (1, 0)
-                    vector23 = (0, 0)
-                    invalid = False
-                    invalid2 = False
-                    submit_vect1 = False
-                    submit_vect2 = False
-                    vector1x_input.kill()
-                    vector1y_input.kill()
-                    vector2x_input.kill()
-                    vector2y_input.kill()
-                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
-                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
-                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
-                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+                    resetp3 = True
     
-            if page4:
-                x=0
+            if page4: # Linear transformation and transformed vectors 
+                # Input space of matrix A
+                screen_main.blit(matrix_bracket, (main_width/1.45, main_height/4.15))
+                MANAGER2.draw_ui(screen_main)    
+                matrixA_1 = matrixA_1_input.get_text()
+                matrixA_2 = matrixA_2_input.get_text()
+                matrixA_3 = matrixA_3_input.get_text()
+                matrixA_4 = matrixA_4_input.get_text()
+                screen_main.blit(matrixA_text, (main_width/1.45, main_height/4.7))
+                
+                if submit3.draw(screen_main, 200):
+                    submit_matA = True
+
+                if submit_matA:
+                    matAbx = mfun.float_convert((matrixA_1, matrixA_3))
+                    matAby = mfun.float_convert((matrixA_2, matrixA_4))
+                    if matAbx == "invalid" or matAby == "invalid":
+                        invalid3 = True
+                        submit_matA = False
+                    else:
+                        invalid3 = False
+                        submit_matA = False
+                if invalid3:
+                    screen_main.blit(invalid_input, (main_width/1.3, main_height/2.6))   
+                    
+                # Vector input space
+                vectorax = vectorax_input.get_text()
+                vectoray = vectoray_input.get_text()
+                screen_main.blit(b1, (main_width/1.4, main_height/2.2))
+                
+                screen_main.blit(vect1, (main_width/1.45, main_height/2.5))
+                if invalid2:
+                    screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
+                if do_p4.draw(screen_main, 200):
+                    submit_vect2 = True
+                    dobool = True
+                if submit_vect2:
+                    vector14 = mfun.float_convert((vectorax, vectoray))
+                    vector24 = mfun.float_convert((vectorax, vectoray))
+                    if vector14 == "invalid":
+                        submit_vect2 = False
+                        invalid2 = True
+                        dobool = False
+                        dtbool = False
+                    else:
+                        invalid2 = False
+                        submit_vect2 = False
+
+                if dt_p4.draw(screen_main, 200):
+                    submit_vect2 = True
+                    dtbool = True
+                 
+                page4_head = page2Font.render(page4_heading, True, "White")    
+                screen_main.blit(page4_head, (main_width/1.37, main_height/24) )
+                
+                if reset_p2.draw(screen_main, 200):
+                    resetp4 = True
+
             if page5:
                 x=0
             if page6:
                 x=0    
             if page7:
                 x=0
-           
+                
+            # PAGE RESETS
+            if resetp2:
+                resetp2 = False
+                invalid = False
+                invalid2 = False
+                submit_vect1 = False
+                submit_vect2 = False
+                vector1x_input.kill()
+                vector1y_input.kill()
+                vector2x_input.kill()
+                vector2y_input.kill()
+                vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+                vector1 = (0,0)
+                vector2 = (0,0)
+                addition = False
+                subtraction = False
+                add_text = "Addition"
+                sub_text = "Subtraction"
+                
+            if resetp3:
+                resetp3 = False
+                vector13 = (1, 0)
+                vector23 = (0, 0)
+                invalid = False
+                invalid2 = False
+                submit_vect1 = False
+                submit_vect2 = False
+                vector1x_input.kill()
+                vector1y_input.kill()
+                vector2x_input.kill()
+                vector2y_input.kill()
+                vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+                
+            if resetp4:
+                resetp4 = False
+                submit_matA = False
+                invalid3 = False
+                matAbx = (1, 0)
+                matAby = (0, 1)
+                matrixA_1_input.kill()    
+                matrixA_2_input.kill()    
+                matrixA_3_input.kill()    
+                matrixA_4_input.kill() 
+                matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
+                matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
+                matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
+                matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
+                dobool = False
+                dtbool = False
+                invalid2 = False
+                vector14 = (0,0)
+                vector24 = (0,0)
+                vectorax_input.kill()
+                vectoray_input.kill()
+                vectorax_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectorax_input_rect, manager=MANAGER2, object_id='#vectorax')
+                vectoray_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectoray_input_rect, manager=MANAGER2, object_id='#vectoray')
+                
+            if page1 == False:
+                if back.draw(screen_main, 230):
+                    page1 = True
+                    page2 = False
+                    page3 = False
+                    page4 = False
+                    page5 = False
+                    page6 = False
+                    page7 = False
+                    page8 = False
+                    
+                    # reset page variables to be recycled again
+                    transformx = pygame.Vector2(1,0)
+                    transformy = pygame.Vector2(0,1)
+                    resetp2 = True
+                    resetp3 = True
+                    resetp4 = True
+                    
+                
         # flip() the display to put your work on screen
         pygame.display.flip()
 
