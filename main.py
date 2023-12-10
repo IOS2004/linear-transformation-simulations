@@ -2,7 +2,7 @@
 
 import pygame
 import pygame_gui
-import mfun
+import functions as mfun
 import math
 
 def main():
@@ -95,23 +95,26 @@ def main():
     page4_dt_img = pygame.image.load('images/menu/page4/draw_transformed.png').convert_alpha()
     
     # Fonts Change hardcoded coordinates and sizes
-    font = pygame.font.Font(None, 100)
+    font = pygame.font.Font("images/Gotham-Font/GothamMedium.ttf", 100)
     fontFront = font.render("Vector Vista", True, "White")
-    font = pygame.font.Font(None, 30)
+    font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 30)
     Frontdisc = font.render("A powerful tool to intuitively learn linear algebra's components", True, "cyan")
-    font = pygame.font.Font(None, 25)
-    copyright = font.render("\u00A9OmSahu2023", True, "White")
-    pageFont = pygame.font.Font(None, 30)
+    font = pygame.font.Font("images/winterSong.ttf", 25)
+    copyright = font.render("Made By Om Sahu", True, "White")
+    pageFont = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 30)
     vect2 = pageFont.render("Vector 2", True, "White")
     vect1 = pageFont.render("Vector 1", True, "White")
     pageFont = pygame.font.Font(None, 20)
     invalid_input = pageFont.render("INVALID INPUT", True, "Red")  
-    page2Font = pygame.font.Font(None, 25)
+    page2Font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 20)
+    page2Font_normal = pygame.font.Font(None, 30)
     
     page3Font = pygame.font.Font(None, 150)
     matrix_bracket = page3Font.render("[     ]", True, "white")
-    page3Font = pygame.font.Font(None, 30)
+    page3Font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 30)
     matrixA_text = page3Font.render("Matrix A", True, "white")
+    eigen1_text = page2Font.render("Eigen Vectors", True, "White")
+    eigen2_text = page2Font.render("Eigen Values", True, "White")
     
     # input vector fonts
     pageFont = pygame.font.Font(None, 40)
@@ -156,7 +159,7 @@ def main():
     page8 = False
     
     # INPUT BOXES
-    # MANAGER
+    # MANAGER 2 Vector input boxes
     vector1x_input_rect = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
     vector1y_input_rect = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
     vector2x_input_rect = pygame.Rect(main_width/1.37, main_height/2.4, 50, 33)
@@ -165,7 +168,7 @@ def main():
     vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
     vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
     vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
-    # MANAGER2
+    # MANAGER2 Matrix and a vector input box
     matrix1x = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
     matrix1y = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
     matrix2x = pygame.Rect(main_width/1.37, main_height/3, 50, 33)
@@ -191,10 +194,17 @@ def main():
     page2_heading = "ADDITION AND SUBTRACTION"
     page3_heading = "DOT PRODUCT"
     page4_heading = "LINEAR TRANSFORMATION"
+    page5_heading = "EIGEN VALUES AND VECTORS"
     matAbx = (1, 0)
     matAby = (0, 1)
     vector14 = (0,0)
     vector24 = (0,0)
+    l1 = 1
+    l2 = 1
+    E1 = "(R1, R2)"
+    E2 = "(R1, R2)"
+    lamda1 = "1"
+    lamda2 = "1"
 
     # Main loop
     while running:
@@ -210,8 +220,6 @@ def main():
         MANAGER.update(dt)
         MANAGER2.update(dt)
         
-        
-
         if start: # Implementing graph
             # fill the screen with a color to wipe away anything from last frame
             screen.fill("black")
@@ -270,8 +278,7 @@ def main():
             # x axis we have     
             draw_vector(screen, origin_pos, convertx, spacing, "white", 2)
             draw_vector(screen, origin_pos, convertxn, spacing, "white", 2)
-
-
+            
             # PAGES OPERATIONS IMPLEMENTATION
 
             # Page 2 OPERATIONS
@@ -312,8 +319,73 @@ def main():
                         draw_vector(screen, origin_pos, vector14, spacing, "green")
                     if dtbool:
                         mfun.draw_bvector(screen, origin_pos, vector24, transformx, transformy, spacing, "red")
+            
+            # Page 5 OPERATIONS
+            if page5:
+                if invalid3 == False:
+                    # Transform grid
+                    transformx = pygame.Vector2(matAbx[0], matAbx[1])
+                    transformy = pygame.Vector2(matAby[0], matAby[1])
                 
-                
+                    # Calculate Eigen values
+                    lamda1, lamda2 = mfun.solve_quadratic(1, -(matAbx[0] + matAby[1]), (matAbx[0]*matAby[1] - matAby[0]*matAbx[1]))
+                    if lamda1 == None:
+                        lamda1 = "Complex"
+                        lamda2 = "Complex"
+                    else:
+                        l1 = lamda1
+                        l2 = lamda2
+                        lamda1 = str(round(lamda1, 3))
+                        lamda2 = str(round(lamda2, 3))
+                    # Calculate Eigen vectors
+                    if l1 == l2:
+                        if matAby[0] == 0:
+                           e1 = (0, 0) 
+                        else:
+                            e1 = ( 1, (l1 - matAbx[0])/matAby[0])
+                        if matAby[1] - l1 == 0:
+                            e2 = (0, 0)
+                        else:    
+                            e2 = ( 1, (-matAbx[1] / (matAby[1] - l1) ))
+                            
+                    if l1 != l2:
+                        if matAby[0] == 0:
+                            e1 = (0, 0)
+                            e2 = e1
+                        else:
+                            e1 = ( 1, (l1 - matAbx[0])/matAby[0])
+                            e2 = ( 1, (l2 - matAbx[0])/matAby[0])
+                    e1 = (round(e1[0], 3), round(e1[1], 3))
+                    e2 = (round(e2[0], 3), round(e2[1], 3))
+                    
+                    # Draw eigen vectors
+                    if lamda1 != "Complex":
+                        eigen1 = pygame.Vector2(e1[0], e1[1])
+                        eigen2 = pygame.Vector2(e2[0], e2[1])
+                        constante1 = math.sqrt( abs( h*h + w*w + 2*(o1*eigen1[0] + o2*eigen1[1]) - o1*o1 - o2*o2  ) / ( e1[0]*eigen1[0] + 1 + eigen1[1]*eigen1[1] ) ) 
+                        constante2 = math.sqrt( abs( h*h + w*w + 2*(o1*eigen2[0] + o2*eigen2[1]) - o1*o1 - o2*o2  ) / ( e1[0]*eigen2[0] + 1 + eigen2[1]*eigen2[1] ) )
+                        converte1 = eigen1*constante1
+                        converte1n = eigen1*constante1*(-1)
+                        converte2 = eigen2*constante2
+                        converte2n = eigen2*constante2*(-1)
+                    
+                        # For e1 we have
+                        draw_vector(screen, origin_pos, converte1, spacing, "green")
+                        draw_vector(screen, origin_pos, converte1n, spacing, "green")
+        
+                        # e2 axis we have     
+                        draw_vector(screen, origin_pos, converte2, spacing, "green")
+                        draw_vector(screen, origin_pos, converte2n, spacing, "green")
+                    
+                    if lamda1 == "Complex":
+                        E1 = "Complex"
+                        E2 = "Complex"
+                    elif matAby[0] == 0 and matAby[1] - l1 == 0:
+                            E1 = "(R1, R2)"
+                            E2 = "(R1, R2)"
+                    else:
+                        E1 = "k " + str(e1)
+                        E2 = "k " + str(e2)
 
             # (Make effects function of spacing, future implementation)
             # zoom effect
@@ -354,9 +426,7 @@ def main():
                 frontPage = True
                 start = False
                 sideMenu = False
-            
-                
-         
+                 
         # Implementing Front page
         if frontPage:
             if start_button.draw(front, 5):
@@ -372,8 +442,8 @@ def main():
         # Blits the front page Change hardcoded coordinates and sizes
         if frontPage:
             screen_main.blit(front, (0,0))
-            screen_main.blit(fontFront, (main_width/2 - 200, main_height/2 - 200))
-            screen_main.blit(Frontdisc, (main_width/2 - 300, main_height/2 - 100))
+            screen_main.blit(fontFront, (main_width/2 - 270, main_height/2 - 200))
+            screen_main.blit(Frontdisc, (main_width/2 - 450, main_height/2 - 100))
             screen_main.blit(copyright, (main_width/1.5, main_height/1.2))
 
         # Blits the graph
@@ -471,7 +541,7 @@ def main():
                 subp2 = page2Font.render(sub_text, True, "White")
                 screen_main.blit(addp2, (main_width/1.2, main_height/1.65) )
                 screen_main.blit(subp2, (main_width/1.2, main_height/1.45) )  
-                screen_main.blit(page2_head, (main_width/1.39, main_height/24) )  
+                screen_main.blit(page2_head, (main_width/1.43, main_height/26) )  
                                                                  
             if page3: # Dot product of two vectors
                 # Input space of two vectors
@@ -514,7 +584,7 @@ def main():
                 dot_text = page2Font.render(dot_product, True, "white")
                 screen_main.blit(dot_text, (main_width/1.4, main_height/1.65))
                 page3_head = page2Font.render(page3_heading, True, "White") 
-                screen_main.blit(page3_head, (main_width/1.3, main_height/24) )  
+                screen_main.blit(page3_head, (main_width/1.32, main_height/26) )  
 
                 if reset_p2.draw(screen_main, 200):
                     resetp3 = True
@@ -527,7 +597,7 @@ def main():
                 matrixA_2 = matrixA_2_input.get_text()
                 matrixA_3 = matrixA_3_input.get_text()
                 matrixA_4 = matrixA_4_input.get_text()
-                screen_main.blit(matrixA_text, (main_width/1.45, main_height/4.7))
+                screen_main.blit(matrixA_text, (main_width/1.45, main_height/4.9))
                 
                 if submit3.draw(screen_main, 200):
                     submit_matA = True
@@ -572,13 +642,53 @@ def main():
                     dtbool = True
                  
                 page4_head = page2Font.render(page4_heading, True, "White")    
-                screen_main.blit(page4_head, (main_width/1.37, main_height/24) )
+                screen_main.blit(page4_head, (main_width/1.40, main_height/26) )
                 
                 if reset_p2.draw(screen_main, 200):
                     resetp4 = True
 
             if page5:
-                x=0
+                # Kill vector input space, we only need matrix input space
+                vectorax_input.kill()
+                vectoray_input.kill()
+                # Matrix A input space
+                screen_main.blit(matrix_bracket, (main_width/1.45, main_height/4.15))
+                MANAGER2.draw_ui(screen_main)    
+                matrixA_1 = matrixA_1_input.get_text()
+                matrixA_2 = matrixA_2_input.get_text()
+                matrixA_3 = matrixA_3_input.get_text()
+                matrixA_4 = matrixA_4_input.get_text()
+                screen_main.blit(matrixA_text, (main_width/1.45, main_height/4.9))   
+                if submit3.draw(screen_main, 200):
+                    submit_matA = True
+
+                if submit_matA:
+                    matAbx = mfun.float_convert((matrixA_1, matrixA_3))
+                    matAby = mfun.float_convert((matrixA_2, matrixA_4))
+                    if matAbx == "invalid" or matAby == "invalid":
+                        invalid3 = True
+                        submit_matA = False
+                    else:
+                        invalid3 = False
+                        submit_matA = False
+                if invalid3:
+                    screen_main.blit(invalid_input, (main_width/1.3, main_height/2.6)) 
+                # Print values
+                eigen_values = page2Font_normal.render("\u03BB1 = " + lamda1 + "           " + "\u03BB2 = " + lamda2, True, "white")
+                eigen_vectors = page2Font.render("E1 = " + E1 + "    " + "E2 = " + E2, True, "white")
+                screen_main.blit(eigen_values, (main_width/1.45, main_height/1.77))
+                screen_main.blit(eigen_vectors, (main_width/1.45, main_height/1.5))
+                screen_main.blit(eigen1_text, (main_width/1.45, main_height/1.6))
+                screen_main.blit(eigen2_text, (main_width/1.45, main_height/1.9))
+                
+                page5_head = page2Font.render(page5_heading, True, "White")    
+                screen_main.blit(page5_head, (main_width/1.43, main_height/26) )
+                
+                if reset_p2.draw(screen_main, 200):
+                    resetp5 = True
+
+
+
             if page6:
                 x=0    
             if page7:
@@ -646,6 +756,28 @@ def main():
                 vectoray_input.kill()
                 vectorax_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectorax_input_rect, manager=MANAGER2, object_id='#vectorax')
                 vectoray_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectoray_input_rect, manager=MANAGER2, object_id='#vectoray')
+
+            if resetp5:
+                resetp5 = False
+                invalid3 = False
+                submit_matA = False
+                invalid3 = False
+                matAbx = (1, 0)
+                matAby = (0, 1)
+                matrixA_1_input.kill()    
+                matrixA_2_input.kill()    
+                matrixA_3_input.kill()    
+                matrixA_4_input.kill() 
+                matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
+                matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
+                matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
+                matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
+                l1 = 1
+                l2 = 1
+                E1 = "(R1, R2)"
+                E2 = "(R1, R2)"
+                lamda1 = "1"
+                lamda2 = "1"
                 
             if page1 == False:
                 if back.draw(screen_main, 230):
@@ -664,13 +796,16 @@ def main():
                     resetp2 = True
                     resetp3 = True
                     resetp4 = True
+                    resetp5 = True
+                    resetp6 = True
+                    resetp7 = True
+                    resetp8 = True
                     
                 
         # flip() the display to put your work on screen
         pygame.display.flip()
 
         # dt is delta time in seconds since last frame, used for framerate-
-        # independent physics.
         dt = clock.tick(30) / 1000
 
     pygame.quit()
