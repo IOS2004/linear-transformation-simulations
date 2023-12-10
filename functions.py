@@ -247,3 +247,13 @@ def solve_quadratic(a, b, c):
         x1 = (-b + math.sqrt(D)) / 2*a
         x2 = (-b - math.sqrt(D)) / 2*a
         return x1, x2
+    
+def pgfourth_point(A, B, C):
+    ''' Finds 4th point of parallelogram'''
+    # Calculate vector representing one side of the parallelogram
+    vectorAB = (B[0] - A[0], B[1] - A[1])
+
+    # Calculate the fourth point D
+    D = (C[0] + vectorAB[0], C[1] + vectorAB[1])
+
+    return D
