@@ -55,6 +55,7 @@ def main():
     invalid3 = False
     dobool = False
     dtbool = False
+    cyclep7 = False # Checks whether Cycle is completed or not
 
     # Button state booleans
     start = False # Turns on the graph page
@@ -113,9 +114,9 @@ def main():
     matrixA_text = page3Font.render("Matrix A", True, "white")
     eigen1_text = page2Font.render("Eigen Vectors", True, "White")
     eigen2_text = page2Font.render("Eigen Values", True, "White")
-    font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 20)
+    font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 15)
     madeby = font.render("MADE BY OM SAHU", True, "cyan")
-    
+    page2Font2 = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 100)
     
     # input vector fonts
     pageFont = pygame.font.Font(None, 40)
@@ -195,6 +196,7 @@ def main():
     page4_heading = "LINEAR TRANSFORMATION"
     page5_heading = "EIGEN VALUES AND VECTORS"
     page6_heading = "DETERMINANT"
+    page7_heading = "DIAGONALIZATION"
     matAbx = (1, 0)
     matAby = (0, 1)
     vector14 = (0,0)
@@ -206,6 +208,10 @@ def main():
     lamda1 = "1"
     lamda2 = "1"
     D_value = 1
+    n = 0
+    diagonalised = True
+    diagonalizable = True
+    last_action_time = pygame.time.get_ticks()
 
     # Main loop
     while running:
@@ -381,13 +387,14 @@ def main():
                     if lamda1 == "Complex":
                         E1 = "Complex"
                         E2 = "Complex"
-                    elif matAby[0] == 0 and matAby[1] - l1 == 0:
+                    elif matAby[0] == 0 and matAby[1] - l2 == 0:
                             E1 = "(R1, R2)"
                             E2 = "(R1, R2)"
                     else:
                         E1 = "k " + str(e1)
                         E2 = "k " + str(e2)
-
+            
+            # Page 6 OPERATIONS
             if page6:
                 if invalid3 == False:
                     # Transform grid
@@ -397,6 +404,66 @@ def main():
 
                 fourth = mfun.pgfourth_point((0,0), transformx, transformy, )
                 pygame.draw.polygon(screen, "green", [ origin_pos, mfun.convert(transformx, spacing, origin_pos), mfun.convert(fourth, spacing, origin_pos), mfun.convert(transformy, spacing, origin_pos) ])
+                
+            # Page 7 OPERATIONS
+            if page7:
+                if invalid3 == False:      
+                    # Calculate Eigen values
+                    lamda1, lamda2 = mfun.solve_quadratic(1, -(matAbx[0] + matAby[1]), (matAbx[0]*matAby[1] - matAby[0]*matAbx[1]))
+                    if lamda1 == None:
+                        diagonalizable = False
+                        diagonalised = False
+                    else:
+                        l1 = lamda1
+                        l2 = lamda2
+
+                    # Calculate Eigen vectors
+                    if l1 == l2:
+                        if matAby[0] == 0 and matAby[1] - l2 == 0:
+                            diagonalised = True
+                            diagonalizable = True
+                        else:
+                            diagonalizable = False   
+                            diagonalised = False
+                    if l1 != l2:
+                        if matAby[0] == 0:
+                            e1 = (0, 0)
+                            e2 = e1 
+                            diagonalised = False
+                            diagonalizable = False
+                        elif matAby[0] == 0 and matAby[1] - l2 == 0:
+                            diagonalised = True
+                            diagonalizable = True
+                        else:
+                            e1 = ( 1, (l1 - matAbx[0])/matAby[0])
+                            e2 = ( 1, (l2 - matAbx[0])/matAby[0])
+                            diagonalised = False
+                            diagonalizable = True
+                    if diagonalizable and not diagonalised:
+                        # A matrix
+                        matrixA = mfun.matrix(matAbx[0], matAby[0], matAbx[1], matAby[1])
+                        # Calculate P    
+                        matrixP = mfun.matrix(e1[0], e2[0], e1[1], e2[1])
+                        # Calculate P-1
+                        matrixPn = matrixP.inverse()
+                        # Calculate D
+                        matrixD = mfun.matrix(l1, 0, 0, l2)
+
+                        # Now one by one tranform grids
+                        if n == 1:
+                            transformx = pygame.Vector2(matrixP.a, matrixP.c)
+                            transformy = pygame.Vector2(matrixP.b, matrixP.d)
+                                
+                        if n == 2: 
+                            matrixB = matrixA.multiply(matrixP)
+                            transformx = pygame.Vector2(matrixB.a, matrixB.c)
+                            transformy = pygame.Vector2(matrixB.b, matrixB.d)
+                                
+                        if n == 3:
+                            matrixB = matrixD
+                            transformx = pygame.Vector2(matrixB.a, matrixB.c)
+                            transformy = pygame.Vector2(matrixB.b, matrixB.d)
+                            cyclep7 = True
 
             # (Make effects function of spacing, future implementation)
             # zoom effect
@@ -733,7 +800,61 @@ def main():
                     resetp6 = True    
                  
             if page7:
-                x=0
+                # Kill vector input space, we only need matrix input space
+                vectorax_input.kill()
+                vectoray_input.kill()
+                # Input space of matrix A
+                screen_main.blit(matrix_bracket, (main_width/1.45, main_height/4.15))
+                MANAGER2.draw_ui(screen_main)    
+                matrixA_1 = matrixA_1_input.get_text()
+                matrixA_2 = matrixA_2_input.get_text()
+                matrixA_3 = matrixA_3_input.get_text()
+                matrixA_4 = matrixA_4_input.get_text()
+                screen_main.blit(matrixA_text, (main_width/1.45, main_height/4.9))
+                
+                if submit3.draw(screen_main, 200):
+                    submit_matA = True
+                    cyclep7 = False
+
+                if submit_matA:
+                    matAbx = mfun.float_convert((matrixA_1, matrixA_3))
+                    matAby = mfun.float_convert((matrixA_2, matrixA_4))
+                    if matAbx == "invalid" or matAby == "invalid":
+                        invalid3 = True
+                        submit_matA = False
+                    else:
+                        invalid3 = False
+                        submit_matA = False
+                if invalid3:
+                    screen_main.blit(invalid_input, (main_width/1.3, main_height/2.6))  
+                    
+                current_time = pygame.time.get_ticks()
+                if current_time - last_action_time >= 1000:
+                    last_action_time = current_time
+                    
+                    if diagonalizable and not diagonalised and cyclep7 == False:
+                        n += 1
+                    else:
+                        n = 0
+                 
+                # Draw matrix
+                matrix_bracketD = page2Font2.render("D [     ]", True, "white")
+                screen_main.blit(matrix_bracketD, (main_width/1.46, main_height/2.2))
+                if diagonalizable and not diagonalised:
+                    mfun.draw_matrix(screen_main, matrixD, main_width/1.21, main_height/2.1 )  
+                    
+                if diagonalizable == False:
+                    text_diagonal = page2Font.render('Not Diagonalizable', True, "red")
+                    screen_main.blit(text_diagonal, (main_width/1.37, main_height/2.42)) 
+                if diagonalizable == True and diagonalised == True:
+                    text_diagonalised = page2Font.render('Diagonalised', True, "green")
+                    screen_main.blit(text_diagonalised, (main_width/1.37, main_height/2.42)) 
+                    
+                page7_head = page2Font.render(page7_heading, True, "White")    
+                screen_main.blit(page7_head, (main_width/1.35, main_height/26) )
+                
+                if reset_p2.draw(screen_main, 200):
+                    resetp7 = True    
                 
             # PAGE RESETS
             if resetp2:
@@ -834,7 +955,28 @@ def main():
                 matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
                 matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
                 matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
-                
+             
+            if resetp7: 
+                resetp7 = False
+                submit_matA = False
+                invalid3 = False
+                matAbx = (1, 0)
+                matAby = (0, 1)
+                matrixA_1_input.kill()    
+                matrixA_2_input.kill()    
+                matrixA_3_input.kill()    
+                matrixA_4_input.kill() 
+                matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
+                matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
+                matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
+                matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
+                cyclep7 = False
+                n = 0
+                diagonalised = True
+                diagonalizable = True
+                transformx = pygame.Vector2(1,0)
+                transformy = pygame.Vector2(0,1)
+
             if page1 == False:
                 if back.draw(screen_main, 230):
                     page1 = True
@@ -859,7 +1001,7 @@ def main():
         pygame.display.flip()
 
         # dt is delta time in seconds since last frame, used for framerate-
-        dt = clock.tick(30) / 1000
+        dt = clock.tick(60) / 1000
 
     pygame.quit()
 

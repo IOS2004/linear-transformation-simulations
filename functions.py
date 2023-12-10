@@ -2,6 +2,9 @@ import math
 import pygame
 import pygame_gui
 
+pygame.font.init()
+page2Font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 20)
+
 def distance_points(p1, p2):
     """ Gives distance between two points"""
     distance = math.sqrt( (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2 )
@@ -257,3 +260,33 @@ def pgfourth_point(A, B, C):
     D = (C[0] + vectorAB[0], C[1] + vectorAB[1])
 
     return D
+
+class matrix():
+    def __init__(self, a, b, c, d):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+    def multiply(self, mat):
+        matp = matrix(self.a*mat.a + self.b*mat.c, self.a*mat.b + self.b*mat.d, self.c*mat.a + self.d*mat.c, self.c*mat.b + self.d*mat.d)
+        return matp
+    def inverse(self):
+        D = self.a*self.d - self.b*self.c
+        matn = matrix(self.d/D, -self.b/D, -self.c/D, self.a)
+        return matn
+    def determinant(self):
+        D = self.a*self.d - self.b*self.c
+        return D
+
+def draw_matrix(screen, matrix, width, height):
+    matrix.a = round(matrix.a, 1)
+    matrix.b = round(matrix.b, 1)
+    matrix.c = round(matrix.c, 1)
+    matrix.d = round(matrix.d, 1)
+    
+    matrix_text1 = page2Font.render(str(matrix.a) + "    " + str(matrix.b), True, "white")
+    screen.blit(matrix_text1, (width, height))
+    height += 50
+    matrix_text1 = page2Font.render(str(matrix.c) + "    " + str(matrix.d), True, "white")
+    screen.blit(matrix_text1, (width, height))
+
