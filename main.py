@@ -16,7 +16,7 @@ def main():
     clock = pygame.time.Clock()
     running = True
     dt = 0
-    pygame.display.set_caption("Vectors")
+    pygame.display.set_caption("Vesmos")
     MANAGER = pygame_gui.UIManager((main_width, main_height)) # used for vector input boxes
     MANAGER2 = pygame_gui.UIManager((main_width, main_height)) # used for matrix input boxes
 
@@ -95,7 +95,7 @@ def main():
     
     # Fonts Change hardcoded coordinates and sizes
     font = pygame.font.Font("images/Gotham-Font/GothamMedium.ttf", 100)
-    fontFront = font.render("Vector Vista", True, "White")
+    fontFront = font.render("Vesmos", True, "cyan")
     font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 30)
     Frontdisc = font.render("A powerful tool to intuitively learn linear algebra's components", True, "cyan")
     font = pygame.font.Font("images/winterSong.ttf", 25)
@@ -123,7 +123,7 @@ def main():
     b1 = pageFont.render("(        ,        )", True, "white")
 
     # Button instances change hardcoded coordinates and sizes
-    start_button = mfun.button( (main_width/2) - 150 , main_height/2, start_img, 0.24)
+    start_button = mfun.button( (main_width/2) - 125 , main_height/2, start_img, 0.24)
     toggle = mfun.button(main_width - 120, 50, toggle_img, 0.115)
     detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
     home = mfun.button(50, 40, home_img, 0.12)
@@ -212,6 +212,9 @@ def main():
     diagonalised = True
     diagonalizable = True
     last_action_time = pygame.time.get_ticks()
+    
+    dragging = False
+    offset_x, offset_y = 0, 0
 
     # Main loop
     while running:
@@ -220,9 +223,31 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-                
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    if event.pos[0] <= screen.get_width() and event.pos[1] <= screen.get_height():
+                        dragging = True
+                        offset_x = origin_pos[0] - event.pos[0]
+                        offset_y = origin_pos[1] - event.pos[1]
+                if event.button == 4:
+                    spacing += (spacing*5)*dt  
+                if event.button == 5:
+                    if spacing > 10: # Maximum zoom out for memory reasons
+                        spacing -= (spacing*5)*dt    
+                        
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    dragging = False
+            elif event.type == pygame.MOUSEMOTION:
+                if dragging:
+                    origin_pos[0] = event.pos[0] + offset_x 
+                    origin_pos[1] = event.pos[1] + offset_y  
+                    
             MANAGER.process_events(event)
             MANAGER2.process_events(event)
+            
+            
+        
 
         MANAGER.update(dt)
         MANAGER2.update(dt)
@@ -233,7 +258,7 @@ def main():
     
             # Standard grids 
             keys = pygame.key.get_pressed()
-            grid_color = (65, 136, 165)  
+            grid_color = (95, 166, 195)  
 
             # Grids turn off/on button
             if grid_hold: # if user is still holding the key then do nothing
@@ -273,7 +298,7 @@ def main():
         
             # Reference grids and axis
             if refgrid:
-                mfun.reference_grids(screen, origin_pos, (25, 25, 25), (100, 100, 100), spacing)
+                mfun.reference_grids(screen, origin_pos, (40, 40, 40), (100, 100, 100), spacing)
             # Basis dependent grids aka tranformed grids
             if grid:
                 mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, 2)                
@@ -301,17 +326,17 @@ def main():
                 if subtraction and not invalid and not invalid2:
                     vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
                     sub_text = str(vector4)
-                    mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, (255, 0, 0)) 
+                    mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, "orange") 
                     
             # Page 3 OPERATIONS
             if page3:
                 # Transform grid
                 if invalid == False:
                     transformx = pygame.Vector2(vector13[0], vector13[1])
-                    transformy = pygame.Vector2(0, 0)
+                    transformy = pygame.Vector2(0, 1)
                 # Draw transformed vector 
                 if invalid2 == False:
-                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, (255, 0, 0)) 
+                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, "orange") 
                 if not invalid2 and not invalid:
                     dot_product = "Dot product = " + str(vector13[0]*vector23[0] + vector13[1]*vector23[1])
                     
@@ -403,7 +428,7 @@ def main():
                     D_value = matAbx[0]*matAby[1] - matAbx[1] * matAby[0]                    
 
                 fourth = mfun.pgfourth_point((0,0), transformx, transformy, )
-                pygame.draw.polygon(screen, "green", [ origin_pos, mfun.convert(transformx, spacing, origin_pos), mfun.convert(fourth, spacing, origin_pos), mfun.convert(transformy, spacing, origin_pos) ])
+                pygame.draw.polygon(screen, "orange", [ origin_pos, mfun.convert(transformx, spacing, origin_pos), mfun.convert(fourth, spacing, origin_pos), mfun.convert(transformy, spacing, origin_pos) ])
                 
             # Page 7 OPERATIONS
             if page7:
@@ -520,7 +545,7 @@ def main():
         # Blits the front page Change hardcoded coordinates and sizes
         if frontPage:
             screen_main.blit(front, (0,0))
-            screen_main.blit(fontFront, (main_width/2 - 270, main_height/2 - 200))
+            screen_main.blit(fontFront, (main_width/2 - 200, main_height/2 - 200))
             screen_main.blit(Frontdisc, (main_width/2 - 450, main_height/2 - 100))
             screen_main.blit(copyright, (main_width/1.5, main_height/1.2))
 
@@ -799,7 +824,7 @@ def main():
                 if reset_p2.draw(screen_main, 200):
                     resetp6 = True    
                  
-            if page7:
+            if page7: # Diagonalization of 2x2 Matrix 
                 # Kill vector input space, we only need matrix input space
                 vectorax_input.kill()
                 vectoray_input.kill()
@@ -846,13 +871,42 @@ def main():
                 if diagonalizable == False:
                     text_diagonal = page2Font.render('Not Diagonalizable', True, "red")
                     screen_main.blit(text_diagonal, (main_width/1.37, main_height/2.42)) 
-                if diagonalizable == True and diagonalised == True:
+                if diagonalizable == True and diagonalised == True or cyclep7 == True:
                     text_diagonalised = page2Font.render('Diagonalised', True, "green")
                     screen_main.blit(text_diagonalised, (main_width/1.37, main_height/2.42)) 
                     
                 page7_head = page2Font.render(page7_heading, True, "White")    
                 screen_main.blit(page7_head, (main_width/1.35, main_height/26) )
                 
+                if n == 0:
+                    page7_D = page2Font.render("D = ", True, "White") 
+                    page7_Pn = page2Font.render("P^-1 ", True, "White")
+                    page7_A = page2Font.render("A", True, "White")
+                    page7_P = page2Font.render("P", True, "White")
+                
+                if n == 1:
+                    page7_P = page2Font.render("P", True, "green")
+                    page7_D = page2Font.render("D = ", True, "White") 
+                    page7_Pn = page2Font.render("P^-1", True, "White")
+                    page7_A = page2Font.render("A", True, "White")
+                    
+                if n == 2:
+                    page7_D = page2Font.render("D =", True, "White") 
+                    page7_Pn = page2Font.render("P^-1", True, "White")
+                    page7_A = page2Font.render("A", True, "green")
+                    page7_P = page2Font.render("P", True, "green")
+                    
+                if n == 3 or cyclep7:
+                    page7_D = page2Font.render("D =  ", True, "cyan") 
+                    page7_Pn = page2Font.render("P^-1 ", True, "green")
+                    page7_A = page2Font.render("A", True, "green")
+                    page7_P = page2Font.render("P", True, "green")
+
+                screen_main.blit(page7_D, (main_width - 350, main_height / 1.5))
+                screen_main.blit(page7_P, (main_width - 215, main_height / 1.5))
+                screen_main.blit(page7_A, (main_width - 250, main_height / 1.5))
+                screen_main.blit(page7_Pn, (main_width - 305, main_height / 1.5))
+
                 if reset_p2.draw(screen_main, 200):
                     resetp7 = True    
                 
@@ -1009,7 +1063,7 @@ def main():
 def draw_vector(screen, origin, vector, spacing, color, width = 3):
     # draw vector from origin in original basis 
     vector = (vector[0]*spacing + origin[0], (origin[1] - vector[1]*spacing))
-    pygame.draw.line(screen, color, origin, vector, width)
+    pygame.draw.aaline(screen, color, origin, vector)
     
     
 

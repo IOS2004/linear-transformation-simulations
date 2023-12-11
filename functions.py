@@ -45,7 +45,7 @@ def draw_line(screen, origin, start, end, spacing, color, width = 3):
     """Draw any line with converted coordinate system points"""
     start = convert(start, spacing, origin)
     end = convert(end, spacing, origin)
-    pygame.draw.line(screen, color, start, end, width)
+    pygame.draw.aaline(screen, color, start, end)
 
 def parallel_line(p1, p2, start_point, screen, spacing, origin, color, width = 1, grid = False):
     """Draws parallel line to given line with color specified and start point specified of same magnitude and same direction"""
@@ -163,43 +163,43 @@ def reference_grids(screen, origin_pos, semigrid_color, grid_color, spacing):
     width_start = origin_pos[0]
     y = spacing / 2 # Used to show semi grid for better precision
     for i in range (int((screen.get_width() - width_start) / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, semigrid_color, (width_start + y, 0), (width_start + y, screen.get_height()))
+        pygame.draw.aaline(screen, semigrid_color, (width_start + y, 0), (width_start + y, screen.get_height()))
         y += spacing / 2
     y = spacing / 2
     for i in range (int(width_start / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, semigrid_color, (width_start - y, 0), (width_start - y, screen.get_height()))
+        pygame.draw.aaline(screen, semigrid_color, (width_start - y, 0), (width_start - y, screen.get_height()))
         y += spacing / 2
     
     # X axis semi grids       
     height_start = origin_pos[1]
     y = spacing / 2
     for i in range (int((screen.get_height() - height_start) / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, semigrid_color, (0, height_start + y), (screen.get_width(), height_start + y))
+        pygame.draw.aaline(screen, semigrid_color, (0, height_start + y), (screen.get_width(), height_start + y))
         y += spacing / 2
     y = spacing / 2
     for i in range (int(height_start / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, semigrid_color, (0, height_start - y), (screen.get_width(), height_start - y))
+        pygame.draw.aaline(screen, semigrid_color, (0, height_start - y), (screen.get_width(), height_start - y))
         y += spacing / 2
 
     # Y axis grids
     width_start = origin_pos[0]
     x = 0
     for i in range (int((screen.get_width() - width_start)*2 / spacing) ): # draw no. of grid lines
-        pygame.draw.line(screen, grid_color, (width_start + x, 0), (width_start + x, screen.get_height()))
+        pygame.draw.aaline(screen, grid_color, (width_start + x, 0), (width_start + x, screen.get_height()))
         x += spacing
     x = 0
     for i in range (int(width_start / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, grid_color, (width_start - x, 0), (width_start - x, screen.get_height()))
+        pygame.draw.aaline(screen, grid_color, (width_start - x, 0), (width_start - x, screen.get_height()))
         x += spacing
     # X axis grids
     height_start = origin_pos[1]
     x = 0
     for i in range (int((screen.get_height() - height_start)*2 / spacing) ): # draw no. of grid lines
-        pygame.draw.line(screen, grid_color, (0, height_start + x), (screen.get_width(), height_start + x))
+        pygame.draw.aaline(screen, grid_color, (0, height_start + x), (screen.get_width(), height_start + x))
         x += spacing
     x = 0
     for i in range (int(height_start / spacing)*2 ): # draw no. of grid lines
-        pygame.draw.line(screen, grid_color, (0, height_start - x), (screen.get_width(), height_start - x))
+        pygame.draw.aaline(screen, grid_color, (0, height_start - x), (screen.get_width(), height_start - x))
         x += spacing
     
 class button():
@@ -289,4 +289,3 @@ def draw_matrix(screen, matrix, width, height):
     height += 50
     matrix_text1 = page2Font.render(str(matrix.c) + "    " + str(matrix.d), True, "white")
     screen.blit(matrix_text1, (width, height))
-
