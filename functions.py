@@ -294,7 +294,7 @@ def draw_matrix(screen, matrix, width, height):
 
 def draw_arrowhead(screen, start_point, end_point, arrow_length, line_color, origin, spacing):
 
-    if end_point[0] == 0 and start_point[1] == 0:
+    if end_point[0] == 0 and end_point[1] == 0:
         return
     # Calculate angle of the line
     angle = math.atan2(end_point[1] - start_point[1], end_point[0] - start_point[0])

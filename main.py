@@ -330,7 +330,7 @@ def main():
                 # Transform grid
                 if invalid == False:
                     transformx = pygame.Vector2(vector13[0], vector13[1])
-                    transformy = pygame.Vector2(0, 1)
+                    transformy = pygame.Vector2(0, 0)
                 # Draw transformed vector 
                 if invalid2 == False:
                     mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, "orange") 
@@ -496,13 +496,13 @@ def main():
                     spacing -= (spacing/3)*dt
             
             # drag effect 
-            if keys[pygame.K_RIGHT]:
+            if keys[pygame.K_d]:
                 origin_pos[0] += 300*dt
-            if keys[pygame.K_LEFT]:
+            if keys[pygame.K_a]:
                 origin_pos[0] -= 300*dt
-            if keys[pygame.K_UP]:
+            if keys[pygame.K_w]:
                 origin_pos[1] -= 300*dt
-            if keys[pygame.K_DOWN]:
+            if keys[pygame.K_s]:
                 origin_pos[1] += 300*dt
           
             # Reset button (Undo all of the effect)          
