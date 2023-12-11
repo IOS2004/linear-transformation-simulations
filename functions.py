@@ -155,7 +155,9 @@ def draw_bvector(screen, origin, vector, transformx, transformy, spacing, color,
     """Convert vector to new coordinate system according to given vector by matrix transformation"""
     vector = ((vector[0]*transformx[0] + vector[1]*transformy[0]), (vector[0]*transformx[1] + vector[1]*transformy[1]))
     draw_line(screen, origin, (0,0), vector, spacing, color, width)
+    
     # Draw arrowhead
+    draw_arrowhead(screen, (0,0), vector, 0.3 , color, origin, spacing)
 
 def reference_grids(screen, origin_pos, semigrid_color, grid_color, spacing):
     """ Draws Reference grids"""
@@ -289,3 +291,17 @@ def draw_matrix(screen, matrix, width, height):
     height += 50
     matrix_text1 = page2Font.render(str(matrix.c) + "    " + str(matrix.d), True, "white")
     screen.blit(matrix_text1, (width, height))
+
+def draw_arrowhead(screen, start_point, end_point, arrow_length, line_color, origin, spacing):
+
+    if end_point[0] == 0 and start_point[1] == 0:
+        return
+    # Calculate angle of the line
+    angle = math.atan2(end_point[1] - start_point[1], end_point[0] - start_point[0])
+
+    # Calculate arrowhead points
+    arrowhead1 = (end_point[0] - arrow_length * math.cos(angle - math.pi / 6),
+                  end_point[1] - arrow_length * math.sin(angle - math.pi / 6))
+    arrowhead2 = (end_point[0] - arrow_length * math.cos(angle + math.pi / 6),
+                  end_point[1] - arrow_length * math.sin(angle + math.pi / 6))
+    pygame.draw.polygon(screen, line_color, [convert(arrowhead1, spacing, origin), convert(arrowhead2, spacing, origin),convert(end_point, spacing, origin)])

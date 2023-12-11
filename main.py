@@ -57,7 +57,6 @@ def main():
     dtbool = False
     cyclep7 = False # Checks whether Cycle is completed or not
 
-    # Button state booleans
     start = False # Turns on the graph page
     frontPage = True # Front page of software
     sideMenu = False # Displays side menu
@@ -93,7 +92,7 @@ def main():
     page4_do_img = pygame.image.load('images/menu/page4/draw_original.png').convert_alpha()
     page4_dt_img = pygame.image.load('images/menu/page4/draw_transformed.png').convert_alpha()
     
-    # Fonts Change hardcoded coordinates and sizes
+    # Fonts 
     font = pygame.font.Font("images/Gotham-Font/GothamMedium.ttf", 100)
     fontFront = font.render("Vesmos", True, "cyan")
     font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 30)
@@ -122,7 +121,7 @@ def main():
     pageFont = pygame.font.Font(None, 40)
     b1 = pageFont.render("(        ,        )", True, "white")
 
-    # Button instances change hardcoded coordinates and sizes
+    # Button instances 
     start_button = mfun.button( (main_width/2) - 125 , main_height/2, start_img, 0.24)
     toggle = mfun.button(main_width - 120, 50, toggle_img, 0.115)
     detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
@@ -147,8 +146,7 @@ def main():
     # page4 buttons
     do_p4 = mfun.button(main_width/1.4, main_height/1.8, page4_do_img, 0.4)
     dt_p4 = mfun.button(main_width/1.2, main_height/1.8, page4_dt_img, 0.4)
-
-    
+ 
     # side menu pages
     page1 = True
     page2 = False
@@ -168,6 +166,7 @@ def main():
     vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
     vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
     vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+    
     # MANAGER2 Matrix and a vector input box
     matrix1x = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
     matrix1y = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
@@ -213,6 +212,7 @@ def main():
     diagonalizable = True
     last_action_time = pygame.time.get_ticks()
     
+    # Dragging variables
     dragging = False
     offset_x, offset_y = 0, 0
 
@@ -244,10 +244,7 @@ def main():
                     origin_pos[1] = event.pos[1] + offset_y  
                     
             MANAGER.process_events(event)
-            MANAGER2.process_events(event)
-            
-            
-        
+            MANAGER2.process_events(event)      
 
         MANAGER.update(dt)
         MANAGER2.update(dt)
@@ -298,7 +295,7 @@ def main():
         
             # Reference grids and axis
             if refgrid:
-                mfun.reference_grids(screen, origin_pos, (40, 40, 40), (100, 100, 100), spacing)
+                mfun.reference_grids(screen, origin_pos, (25, 25, 25), (100, 100, 100), spacing)
             # Basis dependent grids aka tranformed grids
             if grid:
                 mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, 2)                
@@ -348,7 +345,7 @@ def main():
                     transformy = pygame.Vector2(matAby[0], matAby[1])
                 if invalid2 == False:
                     if dobool:
-                        draw_vector(screen, origin_pos, vector14, spacing, "green")
+                        mfun.draw_bvector(screen, origin_pos, vector14, (1, 0), (0, 1), spacing, "green")
                     if dtbool:
                         mfun.draw_bvector(screen, origin_pos, vector24, transformx, transformy, spacing, "red")
             
@@ -539,9 +536,6 @@ def main():
                 frontPage = False
                 reset = True
         
-
-        # Screen pages 
-
         # Blits the front page Change hardcoded coordinates and sizes
         if frontPage:
             screen_main.blit(front, (0,0))
@@ -1059,12 +1053,9 @@ def main():
 
     pygame.quit()
 
-
 def draw_vector(screen, origin, vector, spacing, color, width = 3):
     # draw vector from origin in original basis 
     vector = (vector[0]*spacing + origin[0], (origin[1] - vector[1]*spacing))
     pygame.draw.aaline(screen, color, origin, vector)
     
-    
-
 main()
