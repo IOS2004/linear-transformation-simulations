@@ -11,7 +11,7 @@ def main():
     
     main_width = 1200
     main_height = 800
-    screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF)
+    screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.RESIZABLE)
     
     clock = pygame.time.Clock()
     running = True
@@ -91,6 +91,9 @@ def main():
     
     page4_do_img = pygame.image.load('images/menu/page4/draw_original.png').convert_alpha()
     page4_dt_img = pygame.image.load('images/menu/page4/draw_transformed.png').convert_alpha()
+
+    light_img = pygame.image.load('images/brightness.png').convert_alpha()
+    dark_img = pygame.image.load('images/moon.png').convert_alpha()
     
     # Fonts 
     font = pygame.font.Font("images/Gotham-Font/GothamMedium.ttf", 100)
@@ -127,16 +130,18 @@ def main():
     detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
     home = mfun.button(50, 40, home_img, 0.12)
     
-    add = mfun.button(main_width - 350, 100, add_img, 0.5)
-    dot = mfun.button(main_width - 350, 200, dot_img, 0.5)
-    linear = mfun.button(main_width - 350, 300, linear_img, 0.5)
-    eigen = mfun.button(main_width - 350, 400, eigen_img, 0.5)
-    determinant = mfun.button(main_width - 350, 500, determinant_img, 0.5)
-    diagonal = mfun.button(main_width - 350, 600, diagonal_img, 0.5)
-    back = mfun.button(main_width - 400, 40, back_img, 0.08)
+    add = mfun.button(main_width /1.41, 100, add_img, 0.5)
+    dot = mfun.button(main_width /1.41, 200, dot_img, 0.5)
+    linear = mfun.button(main_width /1.41, 300, linear_img, 0.5)
+    eigen = mfun.button(main_width /1.41, 400, eigen_img, 0.5)
+    determinant = mfun.button(main_width /1.41, 500, determinant_img, 0.5)
+    diagonal = mfun.button(main_width /1.41, 600, diagonal_img, 0.5)
+    back = mfun.button(main_width / 1.46, 40, back_img, 0.08)
     submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
     submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
     submit3 = mfun.button(main_width/1.1, main_height/3.5, submit_img, 0.3 )
+    light = mfun.button(main_width - 117, 130, light_img, 0.11)
+    dark = mfun.button(main_width - 117, 130, dark_img, 0.11)
     
     # page2 buttons
     add_p2 = mfun.button(main_width/1.4, main_height/1.7, page2add_img, 0.3)
@@ -169,9 +174,9 @@ def main():
     
     # MANAGER2 Matrix and a vector input box
     matrix1x = pygame.Rect(main_width/1.37, main_height/4, 50, 33)
-    matrix1y = pygame.Rect(main_width/1.27, main_height/4, 50, 33)
+    matrix1y = pygame.Rect(main_width/1.37 + 70 , main_height/4, 50, 33)
     matrix2x = pygame.Rect(main_width/1.37, main_height/3, 50, 33)
-    matrix2y = pygame.Rect(main_width/1.27, main_height/3, 50, 33)
+    matrix2y = pygame.Rect(main_width/1.37 + 70, main_height/3, 50, 33)
     matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
     matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
     matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
@@ -216,6 +221,11 @@ def main():
     dragging = False
     offset_x, offset_y = 0, 0
 
+    # Modes variables
+    lightMode = False
+    darkMode = True
+    resizable = True
+
     # Main loop
     while running:
         # poll for events
@@ -230,10 +240,10 @@ def main():
                         offset_x = origin_pos[0] - event.pos[0]
                         offset_y = origin_pos[1] - event.pos[1]
                 if event.button == 4:
-                    spacing += (spacing*5)*dt  
+                    spacing *= 1.08
                 if event.button == 5:
                     if spacing > 10: # Maximum zoom out for memory reasons
-                        spacing -= (spacing*5)*dt    
+                        spacing *= 0.92
                         
             elif event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:
@@ -241,7 +251,99 @@ def main():
             elif event.type == pygame.MOUSEMOTION:
                 if dragging:
                     origin_pos[0] = event.pos[0] + offset_x 
-                    origin_pos[1] = event.pos[1] + offset_y  
+                    origin_pos[1] = event.pos[1] + offset_y 
+                    
+            if event.type == pygame.VIDEORESIZE:
+                
+                if event.w < 1200 or event.h < 800:
+                    screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF)
+                    resizable = False
+                
+                else:
+                    main_width = event.w
+                    main_height = event.h
+                    screen_main = pygame.display.set_mode((event.w, event.h), pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.RESIZABLE)
+                    screen_main.fill("black")
+                    if frontPage == False:
+                        sideMenu = True
+                    # Resize every surface and change dimensions related default variables
+                    MANAGER = pygame_gui.UIManager((main_width, main_height)) # used for vector input boxes
+                    MANAGER2 = pygame_gui.UIManager((main_width, main_height)) # used for matrix input boxes
+                    graphCoord = (main_width/1.5, main_height)
+                    screen = pygame.Surface(graphCoord, pygame.HWSURFACE)
+                    menu = pygame.Surface((main_width/3, main_height))
+                    screen.fill("black")
+                    menu.fill("black")
+                    front.fill("black")
+                    front = pygame.image.load('images/Front.jpg') # Front page of software
+                    front = pygame.transform.smoothscale(front, (main_width, main_height))
+                
+                    origin_pos = pygame.Vector2(screen.get_width() / 2 , screen.get_height() / 2 ) # Position of origin in screen
+
+                    # Button instances 
+                    start_button = mfun.button( (main_width/2) - 125 , main_height/2, start_img, 0.24)
+                    toggle = mfun.button(main_width - 120, 50, toggle_img, 0.115)
+                    detoggle = mfun.button(main_width - 123, 42, detoggle_img, 0.15)
+                    home = mfun.button(50, 40, home_img, 0.12)
+                
+                    add = mfun.button(main_width /1.41, 100, add_img, 0.5)
+                    dot = mfun.button(main_width /1.41, 200, dot_img, 0.5)
+                    linear = mfun.button(main_width /1.41, 300, linear_img, 0.5)
+                    eigen = mfun.button(main_width /1.41, 400, eigen_img, 0.5)
+                    determinant = mfun.button(main_width /1.41, 500, determinant_img, 0.5)
+                    diagonal = mfun.button(main_width /1.41, 600, diagonal_img, 0.5)
+                    back = mfun.button(main_width / 1.46, 40, back_img, 0.08)
+                    submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
+                    submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
+                    submit3 = mfun.button(main_width/1.1, main_height/3.5, submit_img, 0.3 )
+                    light = mfun.button(main_width - 117, 130, light_img, 0.11)
+                    dark = mfun.button(main_width - 117, 130, dark_img, 0.11)
+    
+                    # page2 buttons
+                    add_p2 = mfun.button(main_width/1.4, main_height/1.7, page2add_img, 0.3)
+                    sub_p2 = mfun.button(main_width/1.4, main_height/1.5, page2sub_img, 0.3)
+                    reset_p2 = mfun.button(main_width/1.4, main_height/1.3, reset_img, 0.3 )
+    
+                    # page4 buttons
+                    do_p4 = mfun.button(main_width/1.4, main_height/1.8, page4_do_img, 0.4)
+                    dt_p4 = mfun.button(main_width/1.2, main_height/1.8, page4_dt_img, 0.4)
+                    # INPUT BOXES
+                    # KILL PREVIOUS BOXES
+                    vector1x_input.kill()
+                    vector1y_input.kill()
+                    vector2x_input.kill()
+                    vector2y_input.kill()
+                    matrixA_1_input.kill()    
+                    matrixA_2_input.kill()    
+                    matrixA_3_input.kill()    
+                    matrixA_4_input.kill()
+                    vectorax_input.kill()
+                    vectoray_input.kill()
+                    # MANAGER 2 Vector input boxes
+                    vector1x_input_rect = pygame.Rect(main_width/1.38, main_height/4, 50, 33)
+                    vector1y_input_rect = pygame.Rect(main_width/1.38 + 70, main_height/4, 50, 33)
+                    vector2x_input_rect = pygame.Rect(main_width/1.38, main_height/2.4, 50, 33)
+                    vector2y_input_rect = pygame.Rect(main_width/1.38 + 70, main_height/2.4, 50, 33)
+                    vector1x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1x_input_rect, manager=MANAGER, object_id='#vector1x') 
+                    vector1y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector1y_input_rect, manager=MANAGER, object_id='#vector1y')
+                    vector2x_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2x_input_rect, manager=MANAGER, object_id='#vector2x')
+                    vector2y_input = pygame_gui.elements.UITextEntryLine(relative_rect=vector2y_input_rect, manager=MANAGER, object_id='#vector2y')
+    
+                    # MANAGER2 Matrix and a vector input box
+                    matrix1x = pygame.Rect(main_width/1.38, main_height/4, 50, 33)
+                    matrix1y = pygame.Rect(main_width/1.38 + 70 , main_height/4, 50, 33)
+                    matrix2x = pygame.Rect(main_width/1.38, main_height/3, 50, 33)
+                    matrix2y = pygame.Rect(main_width/1.38 + 70, main_height/3, 50, 33)
+                    matrixA_1_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1x, manager=MANAGER2, object_id='#matrixA1')
+                    matrixA_2_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix1y, manager=MANAGER2, object_id='#matrixA2')
+                    matrixA_3_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2x, manager=MANAGER2, object_id='#matrixA3')
+                    matrixA_4_input = pygame_gui.elements.UITextEntryLine(relative_rect=matrix2y, manager=MANAGER2, object_id='#matrixA4')
+    
+                    vectorax_input_rect = pygame.Rect(main_width/1.38, main_height/2.2, 50, 33)
+                    vectoray_input_rect = pygame.Rect(main_width/1.38 + 70, main_height/2.2, 50, 33)
+                    vectorax_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectorax_input_rect, manager=MANAGER2, object_id='#vectorax')
+                    vectoray_input = pygame_gui.elements.UITextEntryLine(relative_rect=vectoray_input_rect, manager=MANAGER2, object_id='#vectoray')
+
                     
             MANAGER.process_events(event)
             MANAGER2.process_events(event)      
@@ -249,13 +351,31 @@ def main():
         MANAGER.update(dt)
         MANAGER2.update(dt)
         
+        if resizable == False:
+                screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.RESIZABLE)
+                resizable = True
+        
         if start: # Implementing graph
+            
+            if lightMode:
+                axis_color = (0, 0, 0)
+                screen_color = (255, 255, 255)
+                grid_color = (5, 76, 105)
+                semiref_color = (200, 200, 200)
+                ref_color = (120, 120, 120)
+                
+            if darkMode:
+                axis_color = (255, 255, 255)
+                screen_color = (0, 0, 0)
+                grid_color = (95, 166, 195)
+                semiref_color = (25, 25, 25)
+                ref_color = (100, 100, 100)
+                
             # fill the screen with a color to wipe away anything from last frame
-            screen.fill("black")
+            screen.fill(screen_color)
     
             # Standard grids 
-            keys = pygame.key.get_pressed()
-            grid_color = (95, 166, 195)  
+            keys = pygame.key.get_pressed() 
 
             # Grids turn off/on button
             if grid_hold: # if user is still holding the key then do nothing
@@ -295,18 +415,18 @@ def main():
         
             # Reference grids and axis
             if refgrid:
-                mfun.reference_grids(screen, origin_pos, (25, 25, 25), (100, 100, 100), spacing)
+                mfun.reference_grids(screen, origin_pos, semiref_color, ref_color, spacing)
             # Basis dependent grids aka tranformed grids
             if grid:
                 mfun.vector_grids(screen, origin_pos, convertx, convertxn, converty, convertyn, transformx, transformy, spacing, grid_color, 2)                
-                    
+            
             # For y we have
-            draw_vector(screen, origin_pos, converty, spacing, "white", 2)
-            draw_vector(screen, origin_pos, convertyn, spacing, "white", 2)
+            draw_vector(screen, origin_pos, converty, spacing, axis_color, 2)
+            draw_vector(screen, origin_pos, convertyn, spacing, axis_color, 2)
         
             # x axis we have     
-            draw_vector(screen, origin_pos, convertx, spacing, "white", 2)
-            draw_vector(screen, origin_pos, convertxn, spacing, "white", 2)
+            draw_vector(screen, origin_pos, convertx, spacing, axis_color, 2)
+            draw_vector(screen, origin_pos, convertxn, spacing, axis_color, 2)
             
             # PAGES OPERATIONS IMPLEMENTATION
 
@@ -536,7 +656,7 @@ def main():
                 frontPage = False
                 reset = True
         
-        # Blits the front page Change hardcoded coordinates and sizes
+        # Blits the front page 
         if frontPage:
             screen_main.blit(front, (0,0))
             screen_main.blit(fontFront, (main_width/2 - 200, main_height/2 - 200))
@@ -552,9 +672,22 @@ def main():
             screen_main.blit(menu, (screen.get_width(),0))
             
         # Implementing Side menu
-        if sideMenu: 
-            menu.fill((0,0,20))
-            screen_main.blit(madeby, (main_width - 300, 720))
+        if sideMenu:
+            if lightMode:
+                menu_color = (0, 0, 40)
+                if dark.draw(screen_main, 200):
+                    lightMode = False
+                    darkMode = True
+
+            if darkMode:
+                menu_color = (0, 0, 20)
+                if light.draw(screen_main, 200):
+                    darkMode = False
+                    lightMode = True
+                   
+
+            menu.fill(menu_color)
+            screen_main.blit(madeby, (main_width / 1.3, main_height - 70))
             if detoggle.draw(screen_main, 230):
                 graphCoord = (screen_main.get_width(), screen_main.get_height())
                 screen = pygame.transform.smoothscale(screen, graphCoord)
@@ -636,7 +769,7 @@ def main():
                 subp2 = page2Font.render(sub_text, True, "White")
                 screen_main.blit(addp2, (main_width/1.2, main_height/1.65) )
                 screen_main.blit(subp2, (main_width/1.2, main_height/1.45) )  
-                screen_main.blit(page2_head, (main_width/1.43, main_height/26) )  
+                screen_main.blit(page2_head, (main_width/1.43, main_height/30) )  
                                                                  
             if page3: # Dot product of two vectors 
                 # Input space of two vectors
@@ -679,7 +812,7 @@ def main():
                 dot_text = page2Font.render(dot_product, True, "white")
                 screen_main.blit(dot_text, (main_width/1.4, main_height/1.65))
                 page3_head = page2Font.render(page3_heading, True, "White") 
-                screen_main.blit(page3_head, (main_width/1.32, main_height/26) )  
+                screen_main.blit(page3_head, (main_width/1.32, main_height/30) )  
 
                 if reset_p2.draw(screen_main, 200):
                     resetp3 = True
@@ -737,7 +870,7 @@ def main():
                     dtbool = True
                  
                 page4_head = page2Font.render(page4_heading, True, "White")    
-                screen_main.blit(page4_head, (main_width/1.40, main_height/26) )
+                screen_main.blit(page4_head, (main_width/1.40, main_height/30) )
                 
                 if reset_p2.draw(screen_main, 200):
                     resetp4 = True
@@ -777,7 +910,7 @@ def main():
                 screen_main.blit(eigen2_text, (main_width/1.45, main_height/1.9))
                 
                 page5_head = page2Font.render(page5_heading, True, "White")    
-                screen_main.blit(page5_head, (main_width/1.43, main_height/26) )
+                screen_main.blit(page5_head, (main_width/1.43, main_height/30) )
                 
                 if reset_p2.draw(screen_main, 200):
                     resetp5 = True
@@ -813,12 +946,12 @@ def main():
                 screen_main.blit( D_text, (main_width/1.45, main_height/1.77) )
                     
                 page6_head = page2Font.render(page6_heading, True, "White")    
-                screen_main.blit(page6_head, (main_width/1.35, main_height/26) )
+                screen_main.blit(page6_head, (main_width/1.35, main_height/30) )
 
                 if reset_p2.draw(screen_main, 200):
                     resetp6 = True    
                  
-            if page7: # Diagonalization of 2x2 Matrix 
+            if page7: # Diagonalization of 2x2 Matrix 3
                 # Kill vector input space, we only need matrix input space
                 vectorax_input.kill()
                 vectoray_input.kill()
@@ -870,7 +1003,7 @@ def main():
                     screen_main.blit(text_diagonalised, (main_width/1.37, main_height/2.42)) 
                     
                 page7_head = page2Font.render(page7_heading, True, "White")    
-                screen_main.blit(page7_head, (main_width/1.35, main_height/26) )
+                screen_main.blit(page7_head, (main_width/1.35, main_height/30) )
                 
                 if n == 0:
                     page7_D = page2Font.render("D = ", True, "White") 
@@ -896,10 +1029,10 @@ def main():
                     page7_A = page2Font.render("A", True, "green")
                     page7_P = page2Font.render("P", True, "green")
 
-                screen_main.blit(page7_D, (main_width - 350, main_height / 1.5))
-                screen_main.blit(page7_P, (main_width - 215, main_height / 1.5))
-                screen_main.blit(page7_A, (main_width - 250, main_height / 1.5))
-                screen_main.blit(page7_Pn, (main_width - 305, main_height / 1.5))
+                screen_main.blit(page7_D, (main_width/1.42, main_height / 1.5))
+                screen_main.blit(page7_P, (main_width/1.24, main_height / 1.5))
+                screen_main.blit(page7_A, (main_width /1.28, main_height / 1.5))
+                screen_main.blit(page7_Pn, (main_width / 1.35, main_height / 1.5))
 
                 if reset_p2.draw(screen_main, 200):
                     resetp7 = True    
