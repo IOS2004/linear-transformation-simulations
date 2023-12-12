@@ -225,6 +225,7 @@ def main():
     lightMode = False
     darkMode = True
     resizable = True
+    detoggled = False
 
     # Main loop
     while running:
@@ -453,7 +454,7 @@ def main():
                     transformy = pygame.Vector2(0, 0)
                 # Draw transformed vector 
                 if invalid2 == False:
-                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, "orange") 
+                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, "red") 
                 if not invalid2 and not invalid:
                     dot_product = "Dot product = " + str(vector13[0]*vector23[0] + vector13[1]*vector23[1])
                     
@@ -636,6 +637,7 @@ def main():
             # toggle side screen        
             if sideMenu == False:
                 if toggle.draw(screen, 230):
+                    detoggled = False
                     graphCoord = (screen_main.get_width()/1.5, screen_main.get_height())
                     screen = pygame.transform.smoothscale(screen, graphCoord)
                     sideMenu = True
@@ -651,7 +653,8 @@ def main():
         if frontPage:
             if start_button.draw(front, 5):
                 screen_main.fill('black')
-                sideMenu = True
+                if detoggled == False:
+                    sideMenu = True
                 start = True
                 frontPage = False
                 reset = True
@@ -685,10 +688,10 @@ def main():
                     darkMode = False
                     lightMode = True
                    
-
             menu.fill(menu_color)
             screen_main.blit(madeby, (main_width / 1.3, main_height - 70))
             if detoggle.draw(screen_main, 230):
+                detoggled = True
                 graphCoord = (screen_main.get_width(), screen_main.get_height())
                 screen = pygame.transform.smoothscale(screen, graphCoord)
                 sideMenu = False
