@@ -94,6 +94,7 @@ def main():
 
     light_img = pygame.image.load('images/brightness.png').convert_alpha()
     dark_img = pygame.image.load('images/moon.png').convert_alpha()
+    resetGraph_img = pygame.image.load('images/reset.png').convert_alpha()
     
     # Fonts 
     font = pygame.font.Font("images/Gotham-Font/GothamMedium.ttf", 100)
@@ -136,12 +137,13 @@ def main():
     eigen = mfun.button(main_width /1.41, 400, eigen_img, 0.5)
     determinant = mfun.button(main_width /1.41, 500, determinant_img, 0.5)
     diagonal = mfun.button(main_width /1.41, 600, diagonal_img, 0.5)
-    back = mfun.button(main_width / 1.46, 40, back_img, 0.08)
+    back = mfun.button(main_width / 1.46, 60, back_img, 0.09)
     submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
     submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
     submit3 = mfun.button(main_width/1.1, main_height/3.5, submit_img, 0.3 )
     light = mfun.button(main_width - 117, 130, light_img, 0.11)
     dark = mfun.button(main_width - 117, 130, dark_img, 0.11)
+    resetGraph = mfun.button(150, 39, resetGraph_img, 0.12)
     
     # page2 buttons
     add_p2 = mfun.button(main_width/1.4, main_height/1.7, page2add_img, 0.3)
@@ -293,7 +295,7 @@ def main():
                     eigen = mfun.button(main_width /1.41, 400, eigen_img, 0.5)
                     determinant = mfun.button(main_width /1.41, 500, determinant_img, 0.5)
                     diagonal = mfun.button(main_width /1.41, 600, diagonal_img, 0.5)
-                    back = mfun.button(main_width / 1.46, 40, back_img, 0.08)
+                    back = mfun.button(main_width / 1.46, 60, back_img, 0.09)
                     submit = mfun.button(main_width/1.1, main_height/4, submit_img, 0.3 )
                     submit2 = mfun.button(main_width/1.1, main_height/2.4, submit_img, 0.3 )
                     submit3 = mfun.button(main_width/1.1, main_height/3.5, submit_img, 0.3 )
@@ -629,11 +631,13 @@ def main():
             # Reset button (Undo all of the effect)          
             if keys[pygame.K_r]:
                 reset = True
+            if resetGraph.draw(screen, 230):
+                reset = True
             if reset:
                 spacing = 70
                 origin_pos = pygame.Vector2(screen.get_width() / 2 , screen.get_height() / 2 )
                 reset = False
-                
+
             # toggle side screen        
             if sideMenu == False:
                 if toggle.draw(screen, 230):
@@ -698,24 +702,43 @@ def main():
                 reset = True
                                                  
             if page1: # Front page of menu 
+                
+                # KILL INPUT BOXES
+                matrixA_1_input.kill()    
+                matrixA_2_input.kill()    
+                matrixA_3_input.kill()    
+                matrixA_4_input.kill() 
+                vectorax_input.kill()
+                vectoray_input.kill()
+                vector1x_input.kill()
+                vector1y_input.kill()
+                vector2x_input.kill()
+                vector2y_input.kill()
+                
                 if add.draw(screen_main, 170):
                     page1 = False
                     page2 = True
+                    resetp2 = True
                 if dot.draw(screen_main, 170):
                     page1 = False
                     page3 = True
+                    resetp3 = True
                 if linear.draw(screen_main, 170):
                     page1 = False
                     page4 = True
+                    resetp4 = True
                 if eigen.draw(screen_main, 170):
                     page1 = False
                     page5 = True
+                    resetp5 = True
                 if determinant.draw(screen_main, 170):
                     page1 = False
                     page6 = True
+                    resetp6 = True
                 if diagonal.draw(screen_main, 170):
                     page1 = False
                     page7 = True
+                    resetp7 = True
                     
             if page2: # Vector addition and subtraction 
                 # Take input Vector 1 and 2
@@ -1179,7 +1202,8 @@ def main():
                     resetp4 = True
                     resetp5 = True
                     resetp6 = True
-                    resetp7 = True                    
+                    resetp7 = True          
+                    
                 
         # flip() the display to put your work on screen
         pygame.display.flip()

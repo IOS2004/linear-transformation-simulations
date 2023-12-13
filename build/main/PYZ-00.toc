@@ -1,0 +1,1198 @@
+('C:\\Users\\om '
+ 'sahu\\OneDrive\\Desktop\\myRepos\\PythonApplication3\\build\\main\\PYZ-00.pyz',
+ [('__future__',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\__future__.py',
+   'PYMODULE'),
+  ('_aix_support',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_aix_support.py',
+   'PYMODULE'),
+  ('_bootsubprocess',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_bootsubprocess.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_compression.py',
+   'PYMODULE'),
+  ('_markupbase',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_markupbase.py',
+   'PYMODULE'),
+  ('_osx_support',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_osx_support.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('_pyi_rth_utils',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\__init__.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_strptime.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\_threading_local.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\argparse.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ast.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\base64.py',
+   'PYMODULE'),
+  ('bdb',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\bdb.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\bisect.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\bz2.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\calendar.py',
+   'PYMODULE'),
+  ('cmd',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\cmd.py',
+   'PYMODULE'),
+  ('code',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\code.py',
+   'PYMODULE'),
+  ('codeop',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\codeop.py',
+   'PYMODULE'),
+  ('configparser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\configparser.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\contextvars.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\copy.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\csv.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('ctypes.wintypes',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ctypes\\wintypes.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\dataclasses.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\datetime.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\decimal.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\difflib.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\dis.py',
+   'PYMODULE'),
+  ('distutils',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\__init__.py',
+   'PYMODULE'),
+  ('distutils.debug',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\debug.py',
+   'PYMODULE'),
+  ('distutils.dep_util',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\dep_util.py',
+   'PYMODULE'),
+  ('distutils.dir_util',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\dir_util.py',
+   'PYMODULE'),
+  ('distutils.errors',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\errors.py',
+   'PYMODULE'),
+  ('distutils.file_util',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\file_util.py',
+   'PYMODULE'),
+  ('distutils.filelist',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\filelist.py',
+   'PYMODULE'),
+  ('distutils.log',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\log.py',
+   'PYMODULE'),
+  ('distutils.spawn',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\spawn.py',
+   'PYMODULE'),
+  ('distutils.sysconfig',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\sysconfig.py',
+   'PYMODULE'),
+  ('distutils.text_file',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\text_file.py',
+   'PYMODULE'),
+  ('distutils.util',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\distutils\\util.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\email\\utils.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\fnmatch.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\fractions.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ftplib.py',
+   'PYMODULE'),
+  ('functions',
+   'C:\\Users\\om '
+   'sahu\\OneDrive\\Desktop\\myRepos\\PythonApplication3\\functions.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\getopt.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\getpass.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\gettext.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\glob.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\gzip.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\hashlib.py',
+   'PYMODULE'),
+  ('html',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\html\\__init__.py',
+   'PYMODULE'),
+  ('html.entities',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\html\\entities.py',
+   'PYMODULE'),
+  ('html.parser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\html\\parser.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\http\\client.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http.server',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\http\\server.py',
+   'PYMODULE'),
+  ('i18n',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\__init__.py',
+   'PYMODULE'),
+  ('i18n.config',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\config.py',
+   'PYMODULE'),
+  ('i18n.loaders',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\loaders\\__init__.py',
+   'PYMODULE'),
+  ('i18n.loaders.json_loader',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\loaders\\json_loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.loader',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\loaders\\loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.python_loader',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\loaders\\python_loader.py',
+   'PYMODULE'),
+  ('i18n.loaders.yaml_loader',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\loaders\\yaml_loader.py',
+   'PYMODULE'),
+  ('i18n.resource_loader',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\resource_loader.py',
+   'PYMODULE'),
+  ('i18n.translations',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\translations.py',
+   'PYMODULE'),
+  ('i18n.translator',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\i18n\\translator.py',
+   'PYMODULE'),
+  ('imp',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\imp.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib._common',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\_common.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\metadata.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\resources.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\inspect.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\lzma.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\mimetypes.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\netrc.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\nturl2path.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\numbers.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\opcode.py',
+   'PYMODULE'),
+  ('optparse',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\optparse.py',
+   'PYMODULE'),
+  ('packaging',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('packaging._elffile',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_elffile.py',
+   'PYMODULE'),
+  ('packaging._manylinux',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_manylinux.py',
+   'PYMODULE'),
+  ('packaging._musllinux',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_musllinux.py',
+   'PYMODULE'),
+  ('packaging._parser',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_parser.py',
+   'PYMODULE'),
+  ('packaging._structures',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('packaging._tokenizer',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\_tokenizer.py',
+   'PYMODULE'),
+  ('packaging.markers',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\markers.py',
+   'PYMODULE'),
+  ('packaging.metadata',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\metadata.py',
+   'PYMODULE'),
+  ('packaging.requirements',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('packaging.specifiers',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('packaging.tags',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\tags.py',
+   'PYMODULE'),
+  ('packaging.utils',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\utils.py',
+   'PYMODULE'),
+  ('packaging.version',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\packaging\\version.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pathlib.py',
+   'PYMODULE'),
+  ('pdb',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pdb.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pickle.py',
+   'PYMODULE'),
+  ('pkg_resources',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.appdirs',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._compat',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._structures',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._typing',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_typing.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.markers',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.tags',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\tags.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.utils',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.version',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.pyparsing',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
+   'PYMODULE'),
+  ('pkg_resources.extern',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\site-packages\\pkg_resources\\extern\\__init__.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pkgutil.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\platform.py',
+   'PYMODULE'),
+  ('plistlib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\plistlib.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pprint.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\py_compile.py',
+   'PYMODULE'),
+  ('pydoc',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pydoc.py',
+   'PYMODULE'),
+  ('pydoc_data',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pydoc_data\\__init__.py',
+   'PYMODULE'),
+  ('pydoc_data.topics',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pygame',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\__init__.py',
+   'PYMODULE'),
+  ('pygame._debug',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\_debug.py',
+   'PYMODULE'),
+  ('pygame._sdl2',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\_sdl2\\__init__.py',
+   'PYMODULE'),
+  ('pygame.colordict',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\colordict.py',
+   'PYMODULE'),
+  ('pygame.cursors',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\cursors.py',
+   'PYMODULE'),
+  ('pygame.freetype',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\freetype.py',
+   'PYMODULE'),
+  ('pygame.ftfont',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\ftfont.py',
+   'PYMODULE'),
+  ('pygame.macosx',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\macosx.py',
+   'PYMODULE'),
+  ('pygame.pkgdata',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\pkgdata.py',
+   'PYMODULE'),
+  ('pygame.sndarray',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\sndarray.py',
+   'PYMODULE'),
+  ('pygame.sprite',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\sprite.py',
+   'PYMODULE'),
+  ('pygame.surfarray',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\surfarray.py',
+   'PYMODULE'),
+  ('pygame.sysfont',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\sysfont.py',
+   'PYMODULE'),
+  ('pygame.threads',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\threads\\__init__.py',
+   'PYMODULE'),
+  ('pygame.version',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame\\version.py',
+   'PYMODULE'),
+  ('pygame_gui',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui._constants',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\_constants.py',
+   'PYMODULE'),
+  ('pygame_gui.core',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.colour_gradient',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\colour_gradient.py',
+   'PYMODULE'),
+  ('pygame_gui.core.colour_parser',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\colour_parser.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\drawable_shapes\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.drawable_shape',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\drawable_shapes\\drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.ellipse_drawable_shape',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\drawable_shapes\\ellipse_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.rect_drawable_shape',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\drawable_shapes\\rect_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.drawable_shapes.rounded_rect_drawable_shape',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\drawable_shapes\\rounded_rect_drawable_shape.py',
+   'PYMODULE'),
+  ('pygame_gui.core.gui_font_freetype',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\gui_font_freetype.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.appearance_theme_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\appearance_theme_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.colour_gradient_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\colour_gradient_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.container_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\container_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.element_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\element_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.font_dictionary_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\font_dictionary_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.gui_font_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\gui_font_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.manager_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\manager_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.text_owner_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\text_owner_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.tool_tip_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\tool_tip_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.window_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\window_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.interfaces.window_stack_interface',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\interfaces\\window_stack_interface.py',
+   'PYMODULE'),
+  ('pygame_gui.core.layered_gui_group',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\layered_gui_group.py',
+   'PYMODULE'),
+  ('pygame_gui.core.object_id',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\object_id.py',
+   'PYMODULE'),
+  ('pygame_gui.core.resource_loaders',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\resource_loaders.py',
+   'PYMODULE'),
+  ('pygame_gui.core.surface_cache',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\surface_cache.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.horiz_rule_layout_rect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\horiz_rule_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.html_parser',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\html_parser.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.hyperlink_text_chunk',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\hyperlink_text_chunk.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.image_layout_rect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\image_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.line_break_layout_rect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\line_break_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.simple_test_layout_rect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\simple_test_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_box_layout',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_box_layout.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_box_layout_row',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_box_layout_row.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.bounce_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\bounce_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.expand_contract_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\expand_contract_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.fade_in_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\fade_in_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.fade_out_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\fade_out_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.shake_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\shake_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.text_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\text_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.tilt_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\tilt_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_effects.typing_appear_effect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_effects\\typing_appear_effect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_layout_rect',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_layout_rect.py',
+   'PYMODULE'),
+  ('pygame_gui.core.text.text_line_chunk',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\text\\text_line_chunk.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_appearance_theme',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_appearance_theme.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_container',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_container.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_element',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_element.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_font_dictionary',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_font_dictionary.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_shadow',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_shadow.py',
+   'PYMODULE'),
+  ('pygame_gui.core.ui_window_stack',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\ui_window_stack.py',
+   'PYMODULE'),
+  ('pygame_gui.core.utility',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\core\\utility.py',
+   'PYMODULE'),
+  ('pygame_gui.data',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\data\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.elements',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_button',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_button.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_drop_down_menu',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_drop_down_menu.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_horizontal_scroll_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_horizontal_scroll_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_horizontal_slider',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_horizontal_slider.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_image',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_image.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_label',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_label.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_panel',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_panel.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_progress_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_progress_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_screen_space_health_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_screen_space_health_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_scrolling_container',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_scrolling_container.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_selection_list',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_selection_list.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_status_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_status_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_box',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_text_box.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_entry_box',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_text_entry_box.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_text_entry_line',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_text_entry_line.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_tool_tip',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_tool_tip.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_vertical_scroll_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_vertical_scroll_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_window',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_window.py',
+   'PYMODULE'),
+  ('pygame_gui.elements.ui_world_space_health_bar',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\elements\\ui_world_space_health_bar.py',
+   'PYMODULE'),
+  ('pygame_gui.ui_manager',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\ui_manager.py',
+   'PYMODULE'),
+  ('pygame_gui.windows',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\__init__.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_colour_picker_dialog',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\ui_colour_picker_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_confirmation_dialog',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\ui_confirmation_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_console_window',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\ui_console_window.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_file_dialog',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\ui_file_dialog.py',
+   'PYMODULE'),
+  ('pygame_gui.windows.ui_message_window',
+   'C:\\Users\\om '
+   'sahu\\AppData\\Roaming\\Python\\Python39\\site-packages\\pygame_gui\\windows\\ui_message_window.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\queue.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\quopri.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\random.py',
+   'PYMODULE'),
+  ('runpy',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\runpy.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\selectors.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\shlex.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\shutil.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\signal.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\socket.py',
+   'PYMODULE'),
+  ('socketserver',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\socketserver.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\ssl.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\statistics.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\string.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\subprocess.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\sysconfig.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\tarfile.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\tempfile.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\textwrap.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\threading.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\tokenize.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('tty',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\tty.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\typing.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('uu',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\uu.py',
+   'PYMODULE'),
+  ('uuid',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\uuid.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\webbrowser.py',
+   'PYMODULE'),
+  ('xml',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\zipfile.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Program Files (x86)\\Microsoft Visual '
+   'Studio\\Shared\\Python39_64\\lib\\zipimport.py',
+   'PYMODULE')])
