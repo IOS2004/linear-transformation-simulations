@@ -229,10 +229,18 @@ def main():
     resizable = True
     detoggled = False
 
+    # Vector animation variables
+    vector1_path = (0, 0)
+    vector2_path = (0, 0)
+    vector3_path = (0, 0)
+    vector4_path = (0, 0)
+    vector23_path = (0, 0)
+    vector14_path = (0, 0)
+    vector24_path = (0, 0)
+
     # Main loop
     while running:
         # poll for events
-        # pygame.QUIT event means the user clicked X to close your window
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -436,17 +444,24 @@ def main():
             # Page 2 OPERATIONS
             if page2:
                 if invalid == False:
-                    mfun.draw_bvector(screen, origin_pos, vector1, transformx, transformy, spacing, (0, 255, 0)) 
+                    vector1_path = mfun.get_vectorPath(vector1, vector1_path, dt) # animation path
+                    mfun.draw_bvector(screen, origin_pos, vector1_path, transformx, transformy, spacing, (0, 255, 0))    
+                    
                 if invalid2 == False:
-                    mfun.draw_bvector(screen, origin_pos, vector2, transformx, transformy, spacing, (0, 0, 255)) 
+                    vector2_path = mfun.get_vectorPath(vector2, vector2_path, dt) # animation path
+                    mfun.draw_bvector(screen, origin_pos, vector2_path, transformx, transformy, spacing, (0, 0, 255))
+                    
                 if addition and not invalid and not invalid2:
                     vector3 = (vector1[0] + vector2[0], vector1[1] + vector2[1])
+                    vector3_path = mfun.get_vectorPath(vector3, vector3_path, dt) # animation path
                     add_text = str(vector3)
-                    mfun.draw_bvector(screen, origin_pos, vector3, transformx, transformy, spacing, (255, 0, 255)) 
+                    mfun.draw_bvector(screen, origin_pos, vector3_path, transformx, transformy, spacing, (255, 0, 255)) 
+                    
                 if subtraction and not invalid and not invalid2:
                     vector4 = (vector1[0] - vector2[0], vector1[1] - vector2[1])
+                    vector4_path = mfun.get_vectorPath(vector4, vector4_path, dt) # animation path
                     sub_text = str(vector4)
-                    mfun.draw_bvector(screen, origin_pos, vector4, transformx, transformy, spacing, "orange") 
+                    mfun.draw_bvector(screen, origin_pos, vector4_path, transformx, transformy, spacing, "orange") 
                     
             # Page 3 OPERATIONS
             if page3:
@@ -456,7 +471,8 @@ def main():
                     transformy = pygame.Vector2(0, 0)
                 # Draw transformed vector 
                 if invalid2 == False:
-                    mfun.draw_bvector(screen, origin_pos, vector23, transformx, transformy, spacing, "red") 
+                    vector23_path = mfun.get_vectorPath(vector23, vector23_path, dt) # animation path
+                    mfun.draw_bvector(screen, origin_pos, vector23_path, transformx, transformy, spacing, "red") 
                 if not invalid2 and not invalid:
                     dot_product = "Dot product = " + str(vector13[0]*vector23[0] + vector13[1]*vector23[1])
                     
@@ -468,9 +484,11 @@ def main():
                     transformy = pygame.Vector2(matAby[0], matAby[1])
                 if invalid2 == False:
                     if dobool:
-                        mfun.draw_bvector(screen, origin_pos, vector14, (1, 0), (0, 1), spacing, "green")
+                        vector14_path = mfun.get_vectorPath(vector14, vector14_path, dt) # animation path
+                        mfun.draw_bvector(screen, origin_pos, vector14_path, (1, 0), (0, 1), spacing, "green")
                     if dtbool:
-                        mfun.draw_bvector(screen, origin_pos, vector24, transformx, transformy, spacing, "red")
+                        vector24_path = mfun.get_vectorPath(vector24, vector24_path, dt) # animation path
+                        mfun.draw_bvector(screen, origin_pos, vector24_path, transformx, transformy, spacing, "red")
             
             # Page 5 OPERATIONS
             if page5:
@@ -741,6 +759,7 @@ def main():
                     resetp7 = True
                     
             if page2: # Vector addition and subtraction 
+                
                 # Take input Vector 1 and 2
                 screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
                 MANAGER.draw_ui(screen_main)
@@ -751,26 +770,36 @@ def main():
                 
                 screen_main.blit(b1, (main_width/1.4, main_height/4))
                 screen_main.blit(b1, (main_width/1.4, main_height/2.4))
+                
                 if invalid:
                     screen_main.blit(invalid_input, (main_width/1.398, main_height/3.2))
+                    
                 if submit.draw(screen_main, 200):
                     submit_vect1 = True
+                    
                 if submit_vect1:    
                     vector1 = mfun.float_convert((vector1x, vector1y))
+                    
                     if vector1 == "invalid":
                         submit_vect1 = False
                         invalid = True 
                         addition = False
                         subtraction = False
                     else: 
+                        vector1_path = (0, 0)
+                        vector3_path = (0, 0)
+                        vector4_path = (0, 0)
                         invalid = False
                         submit_vect1 = False
                         
                 screen_main.blit(vect2, (main_width/1.4, main_height/2.7))
+                
                 if invalid2:
                     screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
+                    
                 if submit2.draw(screen_main, 200):
                     submit_vect2 = True
+                    
                 if submit_vect2:
                     vector2 = mfun.float_convert((vector2x, vector2y))
                     if vector2 == "invalid":
@@ -779,12 +808,17 @@ def main():
                         addition = False
                         subtraction = False
                     else:
+                        vector2_path = (0, 0)
+                        vector3_path = (0, 0)
+                        vector4_path = (0, 0)
                         invalid2 = False
                         submit_vect2 = False
                 if add_p2.draw(screen_main, 200):
+                    vector3_path = (0, 0)
                     addition = True
                     
                 if sub_p2.draw(screen_main, 200):
+                    vector4_path = (0, 0)
                     subtraction = True
                     
                 if reset_p2.draw(screen_main, 200):
@@ -798,6 +832,7 @@ def main():
                 screen_main.blit(page2_head, (main_width/1.43, main_height/30) )  
                                                                  
             if page3: # Dot product of two vectors 
+                
                 # Input space of two vectors
                 screen_main.blit(vect1, (main_width/1.4, main_height/4.7))
                 MANAGER.draw_ui(screen_main)
@@ -808,10 +843,13 @@ def main():
                 
                 screen_main.blit(b1, (main_width/1.4, main_height/4))
                 screen_main.blit(b1, (main_width/1.4, main_height/2.4))
+                
                 if invalid:
                     screen_main.blit(invalid_input, (main_width/1.398, main_height/3.2))
+                    
                 if submit.draw(screen_main, 200):
                     submit_vect1 = True
+                    
                 if submit_vect1:    
                     vector13 = mfun.float_convert((vector1x, vector1y))
                     if vector13 == "invalid":
@@ -822,6 +860,7 @@ def main():
                         submit_vect1 = False
                         
                 screen_main.blit(vect2, (main_width/1.4, main_height/2.7))
+                
                 if invalid2:
                     screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
                 if submit2.draw(screen_main, 200):
@@ -832,6 +871,7 @@ def main():
                         submit_vect2 = False
                         invalid2 = True
                     else:
+                        vector23_path = (0, 0)
                         invalid2 = False
                         submit_vect2 = False
                         
@@ -877,6 +917,7 @@ def main():
                 if invalid2:
                     screen_main.blit(invalid_input, (main_width/1.398, main_height/2))
                 if do_p4.draw(screen_main, 200):
+                    vector14_path = (0, 0)
                     submit_vect2 = True
                     dobool = True
                 if submit_vect2:
@@ -892,6 +933,7 @@ def main():
                         submit_vect2 = False
 
                 if dt_p4.draw(screen_main, 200):
+                    vector24_path = (0, 0)
                     submit_vect2 = True
                     dtbool = True
                  

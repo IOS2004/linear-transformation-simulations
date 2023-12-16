@@ -305,3 +305,35 @@ def draw_arrowhead(screen, start_point, end_point, arrow_length, line_color, ori
     arrowhead2 = (end_point[0] - arrow_length * math.cos(angle + math.pi / 6),
                   end_point[1] - arrow_length * math.sin(angle + math.pi / 6))
     pygame.draw.polygon(screen, line_color, [convert(arrowhead1, spacing, origin), convert(arrowhead2, spacing, origin),convert(end_point, spacing, origin)])
+    
+def get_vectorPath(vector, path, dt):
+    x = path[0]
+    y = path[1]
+    if vector[0] != 0:
+        slope = vector[1]/vector[0]
+        if vector[0] >= 0:
+            if x < vector[0]:
+                x += 10 * dt
+            else:
+                x = vector[0]
+            return (x, x * slope)
+        else:
+            if x > vector[0]:
+                x -= 10 * dt
+            else:
+                x = vector[0]
+            return (x, x * slope)
+    else:
+        if vector[1] >= 0:  
+            if y < vector[1]:
+                y += 10 * dt
+            else:
+                y = vector[1]
+            return (0, y)
+        else:
+            if y > vector[1]:
+                y -= 10 * dt
+            else:
+                y = vector[1]
+            return (0, y)
+             
