@@ -467,8 +467,8 @@ def main():
             if page3:
                 # Transform grid
                 if invalid == False:
-                    transformx = pygame.Vector2(vector13[0], vector13[1])
-                    transformy = pygame.Vector2(0, 0)
+                    transformx = pygame.Vector2(vector13[0], 0)
+                    transformy = pygame.Vector2(vector13[1], 0)
                 # Draw transformed vector 
                 if invalid2 == False:
                     vector23_path = mfun.get_vectorPath(vector23, vector23_path, dt) # animation path
