@@ -31,9 +31,15 @@ A & B \\
 \left(\begin{array}{cc} 
 C \\ 
 D
-\end{array}\right) = ~A*C ~+~ B*D~ = ~Dot~product
+\end{array}\right)
 $$  
-Here Vector 1 is used to linearly transform original grid. This operation is same as  $$ T(x) = Ax $$ where A is Vector 1, x is Vector 2 and Ax is transformed Vector 2 which whose magnitude indicates dot product.
+
+
+This expression equates to dot product. Here Vector 1 is used to linearly transform original grid. This operation is same as 
+
+$$ T(x) = Ax $$ 
+
+where A is Vector 1, x is Vector 2 and Ax is transformed Vector 2 which whose magnitude indicates dot product.
 
 ### Linear transformation
 In a visual way Linear transformation is showed by change of basis via provided matrix (standard basis are (1, 0) and (0, 1)). Each of the column of matrix is used as a new basis for transformed graph. This section also provides vector input to visualize how vector transforms along with graph. Transformed vector can be calculated as 
