@@ -1,5 +1,5 @@
 # VESMOS 
-#### Video Demo:  <[URL HERE](https://youtu.be/b8lJ9V0CyXQ?si=Q8DyO2LZtKxi72P1)>
+#### Video Demo:  <[Click here](https://youtu.be/b8lJ9V0CyXQ?si=Q8DyO2LZtKxi72P1)>
 #### Description:  A visual tool for Linear Algebra conceptual and intuitive understanding.
 > ## NON-TECHNICAL INFO
 ## INTRODUCTION
