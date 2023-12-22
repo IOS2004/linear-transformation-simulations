@@ -75,6 +75,7 @@ Python
 
 ### Installation
 Python project is compiled into single executable using pyinstaller, *images folder should be in same directory as .exe file for proper working.*
+***For downloading open [Realease tab](https://github.com/IOS2004/linear-transformation-simulations/releases/tag/v1.0.0.0) and download Vesmos.rar from assets section. Extract it and you are all ready to go.***
 
 ### Working
 main.py and functions.py includes all the code for software functioning. main.py contains primary code and main game loop while functions.py contains helper functions for screen surfaces.
