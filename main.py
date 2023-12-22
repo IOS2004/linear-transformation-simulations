@@ -118,7 +118,7 @@ def main():
     eigen1_text = page2Font.render("Eigen Vectors", True, "White")
     eigen2_text = page2Font.render("Eigen Values", True, "White")
     font = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 15)
-    madeby = font.render("MADE BY OM SAHU", True, "cyan")
+    madeby = font.render("Inspired by 3blue1brown", True, "cyan")
     page2Font2 = pygame.font.Font("images/Gotham-Font/GothamBook.ttf", 100)
     
     # input vector fonts
@@ -361,13 +361,14 @@ def main():
 
         MANAGER.update(dt)
         MANAGER2.update(dt)
-        
+                
         if resizable == False:
                 screen_main = pygame.display.set_mode((main_width, main_height), pygame.HWSURFACE | pygame.DOUBLEBUF | pygame.RESIZABLE)
                 resizable = True
         
         if start: # Implementing graph
             
+
             if lightMode:
                 axis_color = (0, 0, 0)
                 screen_color = (255, 255, 255)
